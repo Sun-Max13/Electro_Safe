@@ -8,12 +8,14 @@
 </head>
 <body>
 
+    <!-- ENCABEZADO -->
     <header>
         <h1>ElectroSafe</h1>
         <p>Plataforma de Gestión y Consulta del Electrobisturí</p>
         <p>Valleylab Force FX · Medtronic</p>
     </header>
 
+    <!-- MENÚ -->
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#equipo">Equipo</a>
@@ -25,12 +27,14 @@
         <a href="#documentos">Documentos</a>
     </nav>
 
+    <!-- INICIO -->
     <section id="inicio">
         <h2>Bienvenido a ElectroSafe</h2>
         <p>ElectroSafe es una plataforma web desarrollada para organizar, consultar y presentar información relacionada con el electrobisturí como equipo biomédico.</p>
         <p>La plataforma permite consultar información técnica, normativa, mantenimiento, riesgos, diagramas y documentos relacionados con el equipo.</p>
     </section>
 
+    <!-- EQUIPO -->
     <section id="equipo">
         <h2>Equipo Biomédico</h2>
         <h3>Electrobisturí Valleylab Force FX</h3>
@@ -57,6 +61,7 @@
         <p>ElectroSafe permite organizar la información técnica del equipo, registrar mantenimientos, gestionar riesgos y conservar la trazabilidad de las intervenciones realizadas.</p>
     </section>
 
+    <!-- JUSTIFICACIÓN -->
     <section id="justificacion">
         <h2>Justificación técnica</h2>
         <p>El equipo biomédico seleccionado para el desarrollo del proyecto es el <strong>electrobisturí Valleylab Force FX (Medtronic)</strong>, un generador electroquirúrgico de alta frecuencia utilizado en cirugía general, ginecología, urología y otras especialidades.</p>
@@ -64,6 +69,7 @@
         <p>Una falla en el electrobisturí puede afectar la seguridad del paciente y la continuidad del procedimiento quirúrgico, por lo que es indispensable llevar un control de su hoja de vida, historial de mantenimientos, accesorios y pruebas de seguridad eléctrica.</p>
     </section>
 
+    <!-- DIAGRAMAS -->
     <section id="diagramas">
         <h2>Diagramas</h2>
         <div class="contenedor">
@@ -80,25 +86,28 @@
         </div>
     </section>
 
-  <section id="normatividad">
+    <!-- NORMATIVIDAD -->
+    <section id="normatividad">
         <h2>Normatividad</h2>
         <p>Normas técnicas y regulatorias aplicables a dispositivos médicos y equipos biomédicos:</p>
         <ul>
             <li><strong>IEC 60601-1</strong> — Norma general de seguridad para equipos electromédicos. Establece requisitos relacionados con seguridad eléctrica, protección contra riesgos y desempeño esencial.</li>
             <li><strong>IEC 60601-2-2</strong> — Norma particular aplicable a equipos quirúrgicos de alta frecuencia y sus accesorios.</li>
             <li><strong>ISO 14971</strong> — Establece un proceso para la gestión de riesgos asociados a dispositivos médicos, incluyendo identificación, evaluación y control de riesgos.</li>
-            <li><strong>ISO 13485</strong> — Sistema de gestión de calidad para dispositivos médicos</li>
+            <li><strong>ISO 13485</strong> — Sistema de gestión de calidad para dispositivos médicos.</li>
             <li><strong>Decreto 4725 de 2005</strong> (modificado por Decreto 582 de 2017) — Reglamenta el régimen de registros sanitarios, permisos de comercialización y vigilancia sanitaria de los dispositivos médicos en Colombia.</li>
-            <li><strong>Resolución 3100 de 2019 - INVIMA </strong> — Habilitación de servicios de salud</li>
+            <li><strong>Resolución 3100 de 2019 - INVIMA</strong> — Habilitación de servicios de salud.</li>
         </ul>
     </section>
 
+    <!-- MANTENIMIENTO -->
     <section id="mantenimiento">
         <h2>Mantenimiento</h2>
         <p>El mantenimiento de un electrobisturí permite conservar el equipo en condiciones adecuadas de funcionamiento y seguridad.</p>
         <p>Las actividades incluyen inspección, limpieza, pruebas funcionales, revisión de conexiones eléctricas, verificación de potencia de salida, estado de electrodos, continuidad de la placa de retorno y pruebas de seguridad eléctrica.</p>
     </section>
 
+    <!-- RIESGOS -->
     <section id="riesgos">
         <h2>Riesgos</h2>
         <p>El uso de un electrobisturí puede presentar diferentes riesgos asociados al equipo, al paciente, al operador y al entorno:</p>
@@ -111,6 +120,7 @@
         </ul>
     </section>
 
+    <!-- DOCUMENTOS -->
     <section id="documentos">
         <h2>Documentos</h2>
         <div class="contenedor">
@@ -172,6 +182,7 @@
         </div>
     </section>
 
+    <!-- VISOR PDF -->
     <div id="visorPDF" class="visor">
         <div class="visor-caja">
             <div class="visor-header">
@@ -182,11 +193,13 @@
         </div>
     </div>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
         <p>© 2026 ElectroSafe - Plataforma de Gestión y Consulta del Electrobisturí</p>
         <p>Valleylab Force FX · Proyecto de Ingeniería Biomédica</p>
     </footer>
 
+    <!-- JAVASCRIPT -->
     <script>
         function abrirPDF(ruta, titulo) {
             document.getElementById("visorPDF").style.display = "flex";
