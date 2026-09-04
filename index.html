@@ -8,6 +8,7 @@
     <title>ElectroSafe</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -147,14 +148,28 @@
             margin-top: 25px;
         }
 
-        .imagen-equipo {
-            display: block;
+        .foto-equipo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0 35px;
+        }
+
+        .foto-equipo img {
             width: 100%;
-            max-width: 700px;
+            max-width: 650px;
             height: auto;
-            margin: 30px auto;
-            border-radius: 15px;
+            border-radius: 14px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 1px solid #dbe5ea;
+            display: block;
+        }
+
+        .descripcion-foto {
+            text-align: center;
+            color: #52606d;
+            font-size: 0.9rem;
+            margin-top: 10px;
         }
 
         .visor {
@@ -242,857 +257,901 @@
             header h1 {
                 font-size: 2rem;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <header>
-        <h1>ElectroSafe</h1>
 
-        <p>
-            Plataforma de Gestión y Consulta del Electrobisturí
-        </p>
+<header>
 
-        <p>
-            Valleylab Force FX · Medtronic
-        </p>
-    </header>
+    <h1>ElectroSafe</h1>
 
+    <p>
+        Plataforma de Gestión y Consulta del Electrobisturí
+    </p>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#justificacion">Justificación</a>
-        <a href="#diagramas">Diagramas</a>
-        <a href="#normatividad">Normatividad</a>
-        <a href="#modulos">Módulos</a>
-        <a href="#basedatos">Base de Datos</a>
-        <a href="#casos">Casos de Uso</a>
-        <a href="#arquitectura">Arquitectura</a>
-        <a href="#investigacion">Investigación</a>
-        <a href="#mantenimiento">Mantenimiento</a>
-        <a href="#riesgos">Riesgos</a>
-        <a href="#aplicacion">Aplicación</a>
-        <a href="#bibliografia">Bibliografía</a>
-    </nav>
+    <p>
+        Valleylab Force FX · Medtronic
+    </p>
+
+</header>
 
 
-    <section id="inicio">
+<nav>
 
-        <h2>Bienvenido a ElectroSafe</h2>
+    <a href="#inicio">Inicio</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#justificacion">Justificación</a>
+    <a href="#diagramas">Diagramas</a>
+    <a href="#normatividad">Normatividad</a>
+    <a href="#modulos">Módulos</a>
+    <a href="#basedatos">Base de Datos</a>
+    <a href="#casos">Casos de Uso</a>
+    <a href="#arquitectura">Arquitectura</a>
+    <a href="#investigacion">Investigación</a>
+    <a href="#mantenimiento">Mantenimiento</a>
+    <a href="#riesgos">Riesgos</a>
+    <a href="#aplicacion">Aplicación</a>
+    <a href="#bibliografia">Bibliografía</a>
 
-        <p>
-            ElectroSafe es una plataforma web desarrollada para organizar,
-            consultar y presentar información técnica relacionada con el
-            electrobisturí como equipo biomédico.
-        </p>
-
-        <p>
-            La plataforma integra información sobre el equipo, normatividad,
-            mantenimiento, riesgos, arquitectura, base de datos, casos de uso
-            y documentación técnica.
-        </p>
-
-        <img
-            src="img/electrobisturi.jpg"
-            alt="Electrobisturí Valleylab Force FX"
-            class="imagen-equipo"
-        >
-
-    </section>
+</nav>
 
 
-    <section id="equipo">
+<section id="inicio">
 
-        <h2>Equipo Biomédico</h2>
+    <h2>Bienvenido a ElectroSafe</h2>
 
-        <h3>Electrobisturí Valleylab Force FX</h3>
+    <p>
+        ElectroSafe es una plataforma web desarrollada para organizar,
+        consultar y presentar información técnica relacionada con el
+        electrobisturí como equipo biomédico.
+    </p>
 
-        <h4>¿Qué es?</h4>
+    <p>
+        La plataforma integra información sobre el equipo, normatividad,
+        mantenimiento, riesgos, arquitectura, base de datos, casos de uso
+        y documentación técnica.
+    </p>
 
-        <p>
-            El Valleylab Force FX es un equipo de electrocirugía que utiliza
-            energía eléctrica de alta frecuencia para generar efectos
-            controlados sobre los tejidos.
-        </p>
+    <div class="foto-equipo">
 
-        <h4>¿Para qué se utiliza?</h4>
+        <div>
 
-        <p>
-            Se utiliza principalmente para realizar
-            <strong>corte y coagulación</strong> durante procedimientos
-            quirúrgicos, facilitando el control del tejido y del sangrado.
-        </p>
+            <img
+                src="img/electrobisturi.jpg"
+                alt="Electrobisturí Valleylab Force FX"
+            >
 
-        <h4>Principio general de funcionamiento</h4>
+            <p class="descripcion-foto">
+                Electrobisturí Valleylab Force FX utilizado como equipo
+                de referencia para el proyecto ElectroSafe.
+            </p>
 
-        <p>
-            El equipo genera energía de alta frecuencia que se aplica al
-            tejido mediante un electrodo. El efecto producido depende del
-            modo de operación y de los parámetros seleccionados.
-        </p>
+        </div>
 
-        <h4>Importancia en el entorno quirúrgico</h4>
+    </div>
 
-        <p>
-            Su funcionamiento adecuado contribuye a la precisión del
-            procedimiento, el control del sangrado y la seguridad del paciente.
-        </p>
+</section>
 
-        <h4>Seguridad del equipo</h4>
 
-        <p>
-            Cuenta con sistemas de monitoreo, alarmas y protecciones que
-            permiten detectar condiciones anormales y reducir riesgos durante
-            su funcionamiento.
-        </p>
+<section id="equipo">
 
-        <h4>Mantenimiento</h4>
+    <h2>Equipo Biomédico</h2>
 
-        <p>
-            Requiere inspecciones y verificaciones periódicas de sus
-            componentes, accesorios, conexiones, funcionamiento y sistemas
-            de seguridad.
-        </p>
+    <h3>Electrobisturí Valleylab Force FX</h3>
 
-        <h4>Gestión mediante ElectroSafe</h4>
+    <h4>¿Qué es?</h4>
 
-        <p>
-            ElectroSafe permite organizar la información técnica del equipo,
-            registrar mantenimientos, gestionar riesgos y conservar la
-            trazabilidad de las intervenciones realizadas.
-        </p>
+    <p>
+        El Valleylab Force FX es un equipo de electrocirugía que utiliza
+        energía eléctrica de alta frecuencia para generar efectos
+        controlados sobre los tejidos.
+    </p>
 
-        <div class="boton-documento">
+    <h4>¿Para qué se utiliza?</h4>
+
+    <p>
+        Se utiliza principalmente para realizar
+        <strong>corte y coagulación</strong> durante procedimientos
+        quirúrgicos.
+    </p>
+
+    <h4>Principio general de funcionamiento</h4>
+
+    <p>
+        El equipo genera energía de alta frecuencia que se aplica al
+        tejido mediante un electrodo. El efecto producido depende del
+        modo de operación y de los parámetros seleccionados.
+    </p>
+
+    <h4>Seguridad</h4>
+
+    <p>
+        El equipo incorpora sistemas de monitoreo, alarmas y protecciones
+        destinadas a detectar condiciones anormales durante su funcionamiento.
+    </p>
+
+    <h4>Mantenimiento</h4>
+
+    <p>
+        Requiere inspecciones y verificaciones periódicas de componentes,
+        accesorios, conexiones, funcionamiento y sistemas de seguridad.
+    </p>
+
+    <h4>Gestión mediante ElectroSafe</h4>
+
+    <p>
+        ElectroSafe permite organizar la información técnica del equipo,
+        registrar mantenimientos, gestionar riesgos y conservar la
+        trazabilidad de las intervenciones realizadas.
+    </p>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/01_Manual_ElectroSafe.pdf',
+            'Manual ElectroSafe'
+        )">
+
+            📄 Ver Manual ElectroSafe
+
+        </button>
+
+    </div>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/12_Manual_Servicio_Force_FX.pdf',
+            'Manual de Servicio Valleylab Force FX'
+        )">
+
+            📘 Ver Manual de Servicio
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="justificacion">
+
+    <h2>Justificación técnica</h2>
+
+    <p>
+        El equipo biomédico seleccionado es el electrobisturí
+        <strong>Valleylab Force FX</strong>, utilizado como referencia
+        para el análisis de gestión técnica y mantenimiento de equipos
+        de electrocirugía.
+    </p>
+
+    <p>
+        La elección se fundamenta en la importancia de garantizar
+        condiciones adecuadas de funcionamiento, seguridad y trazabilidad
+        dentro del entorno hospitalario.
+    </p>
+
+    <p>
+        Una falla puede afectar la seguridad del paciente y la continuidad
+        del procedimiento quirúrgico, por lo que resulta necesario mantener
+        control sobre la información técnica, mantenimiento, riesgos
+        y documentación.
+    </p>
+
+</section>
+
+
+<section id="diagramas">
+
+    <h2>Diagramas</h2>
+
+    <p>
+        Los diagramas representan gráficamente la estructura funcional
+        y el proceso general de operación del electrobisturí.
+    </p>
+
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+
+            <h3>Diagrama de Bloques</h3>
+
+            <p>
+                Representa los principales componentes y etapas del
+                funcionamiento del electrobisturí.
+            </p>
 
             <button onclick="abrirPDF(
-                'documentos/01_Manual_ElectroSafe.pdf',
-                'Manual ElectroSafe'
+                'img/diagrama-bloques.pdf',
+                'Diagrama de Bloques'
             )">
-                📄 Ver Manual
+
+                📄 Ver diagrama
+
             </button>
 
         </div>
 
-        <div class="boton-documento">
+
+        <div class="tarjeta">
+
+            <h3>Diagrama de Flujo</h3>
+
+            <p>
+                Representa el proceso general de operación del equipo.
+            </p>
 
             <button onclick="abrirPDF(
-                'documentos/12_Manual_Servicio_Force_FX.pdf',
-                'Manual de Servicio Valleylab Force FX'
+                'img/diagrama-flujo.pdf',
+                'Diagrama de Flujo'
             )">
-                🔧 Ver Manual de Servicio
+
+                📄 Ver diagrama
+
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section id="justificacion">
+<section id="normatividad">
 
-        <h2>Justificación técnica</h2>
+    <h2>Normatividad</h2>
 
-        <p>
-            El equipo biomédico seleccionado para el desarrollo del proyecto
-            es el <strong>electrobisturí Valleylab Force FX</strong>, utilizado
-            como referencia para el análisis de gestión técnica y mantenimiento
-            de equipos de electrocirugía.
-        </p>
+    <p>
+        ElectroSafe toma como referencia normas técnicas y disposiciones
+        colombianas relacionadas con seguridad, gestión de riesgos y
+        vigilancia de dispositivos médicos.
+    </p>
 
-        <p>
-            La elección del equipo se fundamenta en la importancia de garantizar
-            condiciones adecuadas de funcionamiento, seguridad y trazabilidad
-            dentro del entorno hospitalario.
-        </p>
+    <ul>
 
-        <p>
-            Una falla puede afectar la seguridad del paciente y la continuidad
-            del procedimiento quirúrgico, por lo que es necesario mantener
-            control sobre la información técnica, mantenimiento, riesgos y
-            documentación.
-        </p>
+        <li>
+            <strong>IEC 60601-1:</strong>
+            requisitos generales de seguridad y desempeño esencial.
+        </li>
 
-    </section>
+        <li>
+            <strong>IEC 60601-2-2:</strong>
+            requisitos particulares para equipos quirúrgicos de alta
+            frecuencia y sus accesorios.
+        </li>
 
+        <li>
+            <strong>ISO 14971:</strong>
+            gestión de riesgos aplicada a dispositivos médicos.
+        </li>
 
-    <section id="diagramas">
+        <li>
+            <strong>Decreto 4725 de 2005:</strong>
+            régimen relacionado con registros sanitarios, permisos de
+            comercialización y vigilancia sanitaria.
+        </li>
 
-        <h2>Diagramas</h2>
+        <li>
+            <strong>Resolución 4816 de 2008:</strong>
+            Programa Nacional de Tecnovigilancia.
+        </li>
 
-        <p>
-            Los diagramas permiten representar de manera gráfica la estructura
-            funcional y el proceso general de operación del electrobisturí.
-        </p>
+        <li>
+            <strong>Resolución 4002 de 2007:</strong>
+            requisitos relacionados con almacenamiento y acondicionamiento
+            de dispositivos médicos.
+        </li>
 
-        <div class="contenedor">
-
-            <div class="tarjeta">
-
-                <h3>Diagrama de Bloques</h3>
-
-                <p>
-                    Representa los principales componentes y etapas del
-                    funcionamiento del electrobisturí.
-                </p>
-
-                <button onclick="abrirPDF(
-                    'img/diagrama-bloques.pdf',
-                    'Diagrama de Bloques'
-                )">
-                    📄 Ver diagrama
-                </button>
-
-            </div>
+    </ul>
 
 
-            <div class="tarjeta">
+    <div class="boton-documento">
 
-                <h3>Diagrama de Flujo</h3>
+        <button onclick="abrirPDF(
+            'documentos/02_Normativa.pdf',
+            'Normatividad'
+        )">
 
-                <p>
-                    Representa el proceso general de operación, incluyendo
-                    encendido, autodiagnóstico, verificación, activación
-                    y alarmas.
-                </p>
+            📄 Ver documento
 
-                <button onclick="abrirPDF(
-                    'img/diagrama-flujo.pdf',
-                    'Diagrama de Flujo'
-                )">
-                    📄 Ver diagrama
-                </button>
+        </button>
 
-            </div>
+    </div>
+
+</section>
+
+
+<section id="modulos">
+
+    <h2>Módulos de ElectroSafe</h2>
+
+    <p>
+        La plataforma se organiza en módulos que permiten estructurar
+        las principales actividades relacionadas con la gestión técnica
+        del equipo biomédico.
+    </p>
+
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h3>Gestión del equipo</h3>
+            <p>
+                Organización de la información básica e identificación
+                del equipo.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Hoja de vida</h3>
+            <p>
+                Centralización de información técnica, ubicación,
+                estado y antecedentes.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Mantenimiento</h3>
+            <p>
+                Gestión de actividades preventivas y correctivas.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Inspecciones</h3>
+            <p>
+                Registro de verificaciones y resultados.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Gestión de riesgos</h3>
+            <p>
+                Identificación de peligros, evaluación y controles.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Documentación</h3>
+            <p>
+                Organización de manuales, normas e informes.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Reportes</h3>
+            <p>
+                Consulta y presentación de información técnica.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Asistente IA</h3>
+            <p>
+                Proyección de apoyo para consulta y organización
+                de información técnica.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/04_Modulos.pdf',
+            'Módulos de ElectroSafe'
+        )">
+
+            📄 Ver documento
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="basedatos">
+
+    <h2>Base de Datos</h2>
+
+    <p>
+        La base de datos propuesta permite estructurar la información
+        relacionada con equipos biomédicos, mantenimientos, inspecciones,
+        riesgos, documentos y usuarios.
+    </p>
+
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h3>Equipo biomédico</h3>
+            <p>
+                Identificación, fabricante, modelo, número de serie,
+                ubicación, estado y fecha de adquisición.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Mantenimiento</h3>
+            <p>
+                Tipo de mantenimiento, fecha, actividades,
+                resultado y responsable.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Inspecciones</h3>
+            <p>
+                Elementos revisados, resultados, observaciones
+                y responsables.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Riesgos</h3>
+            <p>
+                Peligros, causas, consecuencias, nivel de riesgo
+                y controles.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/05_Base_de_Datos.pdf',
+            'Base de Datos'
+        )">
+
+            📄 Ver documento
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="casos">
+
+    <h2>Casos de Uso</h2>
+
+    <p>
+        Los casos de uso describen las interacciones entre los usuarios
+        y las funcionalidades principales de ElectroSafe.
+    </p>
+
+    <ul>
+
+        <li>Consultar información del equipo.</li>
+        <li>Consultar documentación técnica.</li>
+        <li>Registrar mantenimiento.</li>
+        <li>Registrar inspecciones.</li>
+        <li>Gestionar riesgos.</li>
+        <li>Reportar fallas.</li>
+        <li>Consultar historial técnico.</li>
+        <li>Gestionar usuarios.</li>
+
+    </ul>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/06_Casos_de_Uso.pdf',
+            'Casos de Uso'
+        )">
+
+            📄 Ver documento
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="arquitectura">
+
+    <h2>Arquitectura del Sistema</h2>
+
+    <p>
+        ElectroSafe utiliza una arquitectura orientada a la separación
+        de responsabilidades entre presentación, lógica de funcionamiento
+        y gestión de información.
+    </p>
+
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h3>Capa de presentación</h3>
+            <p>
+                Interfaz desarrollada mediante HTML y CSS.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Lógica de aplicación</h3>
+            <p>
+                JavaScript controla interacciones y visualización
+                de documentos.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Gestión documental</h3>
+            <p>
+                Organización y consulta de documentos técnicos.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Proyección de backend</h3>
+            <p>
+                Evolución futura hacia una aplicación con servidor
+                y base de datos persistente.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/07_Arquitectura.pdf',
+            'Arquitectura del Sistema'
+        )">
+
+            📄 Ver documento
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="investigacion">
+
+    <h2>Investigación</h2>
+
+    <p>
+        El proyecto analiza la importancia de la gestión técnica,
+        mantenimiento, seguridad y trazabilidad de los equipos
+        de electrocirugía.
+    </p>
+
+    <p>
+        La investigación sirve como fundamento para el desarrollo
+        conceptual de ElectroSafe.
+    </p>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/08_Investigacion.pdf',
+            'Investigación'
+        )">
+
+            📄 Ver investigación
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="mantenimiento">
+
+    <h2>Mantenimiento</h2>
+
+    <p>
+        El mantenimiento permite conservar el electrobisturí en condiciones
+        adecuadas de funcionamiento, seguridad y desempeño.
+    </p>
+
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+
+            <h3>Mantenimiento preventivo</h3>
+
+            <p>
+                Incluye inspección visual, revisión de cables,
+                conexiones, accesorios, limpieza y pruebas funcionales.
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="tarjeta">
 
-    <section id="normatividad">
+            <h3>Mantenimiento correctivo</h3>
 
-        <h2>Normatividad</h2>
-
-        <p>
-            ElectroSafe toma como referencia normas técnicas y disposiciones
-            colombianas relacionadas con seguridad, gestión de riesgos y
-            vigilancia de dispositivos médicos.
-        </p>
-
-        <ul>
-
-            <li>
-                <strong>IEC 60601-1:</strong>
-                requisitos generales de seguridad y desempeño esencial
-                para equipos electromédicos.
-            </li>
-
-            <li>
-                <strong>IEC 60601-2-2:</strong>
-                requisitos particulares para equipos quirúrgicos de alta
-                frecuencia y sus accesorios.
-            </li>
-
-            <li>
-                <strong>ISO 14971:</strong>
-                proceso de gestión de riesgos aplicado a dispositivos médicos.
-            </li>
-
-            <li>
-                <strong>ISO 13485:</strong>
-                sistema de gestión de calidad aplicable a dispositivos médicos.
-            </li>
-
-            <li>
-                <strong>Decreto 4725 de 2005:</strong>
-                marco colombiano relacionado con registros sanitarios,
-                permisos de comercialización y vigilancia sanitaria de
-                dispositivos médicos.
-            </li>
-
-            <li>
-                <strong>Resolución 4816 de 2008:</strong>
-                reglamentación del Programa Nacional de Tecnovigilancia.
-            </li>
-
-            <li>
-                <strong>Resolución 4002 de 2007:</strong>
-                requisitos relacionados con almacenamiento y acondicionamiento
-                de dispositivos médicos.
-            </li>
-
-        </ul>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/02_Normativa.pdf',
-                'Normatividad'
-            )">
-                📄 Ver documento
-            </button>
+            <p>
+                Comprende identificación de fallas, diagnóstico,
+                reparación, verificación y registro.
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="tarjeta">
 
-    <section id="modulos">
+            <h3>Trazabilidad</h3>
 
-        <h2>Módulos de ElectroSafe</h2>
-
-        <p>
-            La plataforma se organiza en módulos que permiten estructurar
-            las principales actividades relacionadas con la gestión técnica
-            del equipo biomédico.
-        </p>
-
-        <div class="contenedor">
-
-            <div class="tarjeta">
-                <h3>Gestión del equipo</h3>
-                <p>
-                    Permite organizar la información básica e identificación
-                    del equipo biomédico.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Hoja de vida</h3>
-                <p>
-                    Centraliza información técnica, ubicación, estado y
-                    antecedentes del equipo.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Mantenimiento</h3>
-                <p>
-                    Permite gestionar actividades preventivas y correctivas
-                    y conservar su historial.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Inspecciones</h3>
-                <p>
-                    Facilita el registro de verificaciones y resultados
-                    de inspección.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Gestión de riesgos</h3>
-                <p>
-                    Permite identificar peligros, evaluar riesgos y registrar
-                    medidas de control.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Documentación</h3>
-                <p>
-                    Organiza manuales, normas, informes y demás documentación
-                    técnica.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Reportes</h3>
-                <p>
-                    Permite consultar y presentar información técnica
-                    relacionada con la gestión del equipo.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Asistente IA</h3>
-                <p>
-                    Proyección de un módulo de apoyo para consulta y
-                    organización de información técnica.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/04_Modulos.pdf',
-                'Módulos de ElectroSafe'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="basedatos">
-
-        <h2>Base de Datos</h2>
-
-        <p>
-            La base de datos propuesta para ElectroSafe permite estructurar
-            la información relacionada con equipos biomédicos, mantenimientos,
-            inspecciones, riesgos, documentos y usuarios.
-        </p>
-
-        <div class="contenedor">
-
-            <div class="tarjeta">
-                <h3>Equipo biomédico</h3>
-                <p>
-                    Identificación, fabricante, modelo, número de serie,
-                    ubicación, estado y fecha de adquisición.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Mantenimiento</h3>
-                <p>
-                    Registro del tipo de mantenimiento, fecha, actividades,
-                    resultado y responsable.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Inspecciones</h3>
-                <p>
-                    Registro de elementos revisados, resultados,
-                    observaciones y responsables.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Riesgos</h3>
-                <p>
-                    Registro de peligros, causas, consecuencias,
-                    nivel de riesgo y controles.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/05_Base_de_Datos.pdf',
-                'Base de Datos'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="casos">
-
-        <h2>Casos de Uso</h2>
-
-        <p>
-            Los casos de uso describen las interacciones entre los usuarios
-            y las funcionalidades principales de ElectroSafe.
-        </p>
-
-        <ul>
-
-            <li>Consultar información del equipo.</li>
-            <li>Consultar documentación técnica.</li>
-            <li>Registrar mantenimiento.</li>
-            <li>Registrar inspecciones.</li>
-            <li>Gestionar riesgos.</li>
-            <li>Reportar fallas.</li>
-            <li>Consultar historial técnico.</li>
-            <li>Gestionar usuarios.</li>
-
-        </ul>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/06_Casos_de_Uso.pdf',
-                'Casos de Uso'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="arquitectura">
-
-        <h2>Arquitectura del Sistema</h2>
-
-        <p>
-            ElectroSafe utiliza una arquitectura orientada a la separación
-            de responsabilidades entre presentación, lógica de funcionamiento
-            y gestión de información.
-        </p>
-
-        <div class="contenedor">
-
-            <div class="tarjeta">
-                <h3>Capa de presentación</h3>
-                <p>
-                    Interfaz desarrollada mediante HTML y CSS para presentar
-                    la información al usuario.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Lógica de aplicación</h3>
-                <p>
-                    JavaScript controla las interacciones, navegación y
-                    visualización de documentos.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Gestión documental</h3>
-                <p>
-                    Organiza y permite consultar los documentos técnicos
-                    almacenados en la plataforma.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Proyección de backend</h3>
-                <p>
-                    La arquitectura puede evolucionar hacia una aplicación
-                    con servidor y base de datos persistente.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/07_Arquitectura.pdf',
-                'Arquitectura del Sistema'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="investigacion">
-
-        <h2>Investigación</h2>
-
-        <p>
-            El proyecto analiza la importancia de la gestión técnica,
-            mantenimiento, seguridad y trazabilidad de los equipos
-            de electrocirugía.
-        </p>
-
-        <p>
-            La investigación sirve como fundamento para el desarrollo
-            conceptual de ElectroSafe y sus diferentes componentes.
-        </p>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/08_Investigacion.pdf',
-                'Investigación'
-            )">
-                📄 Ver investigación
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="mantenimiento">
-
-        <h2>Mantenimiento</h2>
-
-        <p>
-            El mantenimiento permite conservar el electrobisturí en condiciones
-            adecuadas de funcionamiento, seguridad y desempeño.
-        </p>
-
-        <div class="contenedor">
-
-            <div class="tarjeta">
-                <h3>Mantenimiento preventivo</h3>
-                <p>
-                    Incluye inspección visual, revisión de cables, conexiones,
-                    accesorios, limpieza y pruebas funcionales.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Mantenimiento correctivo</h3>
-                <p>
-                    Comprende identificación de fallas, diagnóstico,
-                    reparación, verificación posterior y registro.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Trazabilidad</h3>
-                <p>
-                    Permite conservar el historial técnico y registrar
-                    las intervenciones realizadas.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/09_Mantenimiento.pdf',
-                'Mantenimiento'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="riesgos">
-
-        <h2>Gestión de Riesgos</h2>
-
-        <p>
-            La gestión de riesgos permite identificar peligros asociados
-            al equipo, evaluar sus posibles consecuencias y establecer
-            medidas de control.
-        </p>
-
-        <ul>
-
-            <li>
-                <strong>Riesgo eléctrico:</strong>
-                fugas de corriente, aislamiento o fallas eléctricas.
-            </li>
-
-            <li>
-                <strong>Riesgo térmico:</strong>
-                quemaduras por aplicación inadecuada de energía.
-            </li>
-
-            <li>
-                <strong>Electrodo de retorno:</strong>
-                contacto inadecuado o pérdida de superficie efectiva.
-            </li>
-
-            <li>
-                <strong>Accesorios:</strong>
-                fallas o conexiones incorrectas.
-            </li>
-
-            <li>
-                <strong>Configuración:</strong>
-                selección incorrecta de modo o parámetros.
-            </li>
-
-            <li>
-                <strong>Incendio:</strong>
-                presencia de materiales combustibles o condiciones
-                ambientales inadecuadas.
-            </li>
-
-        </ul>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/10_Riesgos.pdf',
-                'Gestión de Riesgos'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="aplicacion">
-
-        <h2>Aplicación de ElectroSafe</h2>
-
-        <p>
-            ElectroSafe se plantea como una herramienta para apoyar la
-            gestión técnica del electrobisturí durante las actividades
-            de consulta, inspección, mantenimiento y seguimiento.
-        </p>
-
-        <div class="contenedor">
-
-            <div class="tarjeta">
-                <h3>Identificación</h3>
-                <p>
-                    Consulta de información básica y características
-                    del equipo.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Inspección</h3>
-                <p>
-                    Organización de verificaciones y resultados
-                    de inspección.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Mantenimiento</h3>
-                <p>
-                    Registro y seguimiento de intervenciones técnicas.
-                </p>
-            </div>
-
-            <div class="tarjeta">
-                <h3>Gestión documental</h3>
-                <p>
-                    Consulta organizada de manuales, normas y documentos
-                    relacionados.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/03_Aplicacion.pdf',
-                'Aplicación de ElectroSafe'
-            )">
-                📄 Ver documento
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <section id="bibliografia">
-
-        <h2>Bibliografía</h2>
-
-        <p>
-            Esta sección reúne las principales fuentes técnicas, normativas
-            e institucionales utilizadas como fundamento para el desarrollo
-            de ElectroSafe.
-        </p>
-
-        <p>
-            Las referencias completas, incluyendo los enlaces y URLs de las
-            fuentes consultadas, se encuentran disponibles en el documento
-            de bibliografía.
-        </p>
-
-        <div class="boton-documento">
-
-            <button onclick="abrirPDF(
-                'documentos/11_Bibliografia.pdf',
-                'Bibliografía y fuentes consultadas'
-            )">
-                📚 Ver Bibliografía con URLs
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <div id="visorPDF" class="visor">
-
-        <div class="visor-caja">
-
-            <div class="visor-header">
-
-                <h2 id="tituloPDF">
-                    Documento
-                </h2>
-
-                <button
-                    class="cerrar"
-                    onclick="cerrarPDF()">
-                    ✕
-                </button>
-
-            </div>
-
-            <iframe
-                id="pdfFrame"
-                src=""
-                title="Visor de documentos PDF">
-            </iframe>
+            <p>
+                Permite conservar el historial técnico y registrar
+                las intervenciones realizadas.
+            </p>
 
         </div>
 
     </div>
 
 
-    <footer>
+    <div class="boton-documento">
 
-        <p>
-            © 2026 ElectroSafe - Plataforma de Gestión y Consulta del Electrobisturí
-        </p>
+        <button onclick="abrirPDF(
+            'documentos/09_Mantenimiento.pdf',
+            'Mantenimiento'
+        )">
 
-        <p>
-            Valleylab Force FX · Proyecto de Ingeniería Biomédica
-        </p>
+            📄 Ver documento
 
-    </footer>
+        </button>
 
+    </div>
 
-    <script>
-
-        function abrirPDF(ruta, titulo) {
-
-            document.getElementById("visorPDF").style.display = "flex";
-
-            document.getElementById("tituloPDF").textContent = titulo;
-
-            document.getElementById("pdfFrame").src = ruta;
-        }
+</section>
 
 
-        function cerrarPDF() {
+<section id="riesgos">
 
-            document.getElementById("visorPDF").style.display = "none";
+    <h2>Gestión de Riesgos</h2>
 
-            document.getElementById("pdfFrame").src = "";
-        }
-
-
-        document
-            .getElementById("visorPDF")
-            .addEventListener("click", function(e) {
-
-                if (e.target === this) {
-
-                    cerrarPDF();
-
-                }
-
-            });
+    <p>
+        La gestión de riesgos permite identificar peligros asociados
+        al equipo, evaluar consecuencias y establecer medidas de control.
+    </p>
 
 
-        document.addEventListener("keydown", function(e) {
+    <ul>
 
-            if (e.key === "Escape") {
+        <li>
+            <strong>Riesgo eléctrico:</strong>
+            fugas de corriente, aislamiento o fallas eléctricas.
+        </li>
+
+        <li>
+            <strong>Riesgo térmico:</strong>
+            quemaduras por aplicación inadecuada de energía.
+        </li>
+
+        <li>
+            <strong>Electrodo de retorno:</strong>
+            contacto inadecuado o pérdida de superficie efectiva.
+        </li>
+
+        <li>
+            <strong>Accesorios:</strong>
+            fallas o conexiones incorrectas.
+        </li>
+
+        <li>
+            <strong>Configuración:</strong>
+            selección incorrecta de modo o parámetros.
+        </li>
+
+        <li>
+            <strong>Incendio:</strong>
+            presencia de materiales combustibles o condiciones
+            ambientales inadecuadas.
+        </li>
+
+    </ul>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/10_Riesgos.pdf',
+            'Gestión de Riesgos'
+        )">
+
+            📄 Ver documento
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="aplicacion">
+
+    <h2>Aplicación de ElectroSafe</h2>
+
+    <p>
+        ElectroSafe se plantea como una herramienta para apoyar la
+        gestión técnica del electrobisturí durante las actividades
+        de consulta, inspección, mantenimiento y seguimiento.
+    </p>
+
+
+    <div class="contenedor">
+
+        <div class="tarjeta">
+            <h3>Identificación</h3>
+            <p>
+                Consulta de información básica y características
+                del equipo.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Inspección</h3>
+            <p>
+                Organización de verificaciones y resultados.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Mantenimiento</h3>
+            <p>
+                Registro y seguimiento de intervenciones técnicas.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Gestión documental</h3>
+            <p>
+                Consulta organizada de manuales, normas y documentos.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/03_Aplicacion.pdf',
+            'Aplicación de ElectroSafe'
+        )">
+
+            📄 Ver documento
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="bibliografia">
+
+    <h2>Bibliografía</h2>
+
+    <p>
+        Esta sección reúne las principales fuentes técnicas, normativas
+        e institucionales utilizadas como fundamento para el desarrollo
+        de ElectroSafe.
+    </p>
+
+    <p>
+        Las referencias completas, incluyendo los enlaces y URLs de las
+        fuentes consultadas, se encuentran disponibles en el documento
+        de bibliografía.
+    </p>
+
+
+    <div class="boton-documento">
+
+        <button onclick="abrirPDF(
+            'documentos/11_Bibliografia.pdf?v=3',
+            'Bibliografía y fuentes consultadas'
+        )">
+
+            📚 Ver Bibliografía con URLs
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<div id="visorPDF" class="visor">
+
+    <div class="visor-caja">
+
+        <div class="visor-header">
+
+            <h2 id="tituloPDF">
+                Documento
+            </h2>
+
+            <button
+                class="cerrar"
+                onclick="cerrarPDF()">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <iframe
+            id="pdfFrame"
+            src=""
+            title="Visor de documentos PDF">
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 ElectroSafe - Plataforma de Gestión y Consulta del Electrobisturí
+    </p>
+
+    <p>
+        Valleylab Force FX · Proyecto de Ingeniería Biomédica
+    </p>
+
+</footer>
+
+
+<script>
+
+    function abrirPDF(ruta, titulo) {
+
+        document.getElementById("visorPDF").style.display = "flex";
+
+        document.getElementById("tituloPDF").textContent = titulo;
+
+        document.getElementById("pdfFrame").src = ruta;
+
+    }
+
+
+    function cerrarPDF() {
+
+        document.getElementById("visorPDF").style.display = "none";
+
+        document.getElementById("pdfFrame").src = "";
+
+    }
+
+
+    document
+        .getElementById("visorPDF")
+        .addEventListener("click", function(e) {
+
+            if (e.target === this) {
 
                 cerrarPDF();
 
@@ -1100,7 +1159,19 @@
 
         });
 
-    </script>
+
+    document.addEventListener("keydown", function(e) {
+
+        if (e.key === "Escape") {
+
+            cerrarPDF();
+
+        }
+
+    });
+
+</script>
+
 
 </body>
 </html>
