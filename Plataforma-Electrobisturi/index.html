@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ElectroSafe</title>
-
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- ENCABEZADO -->
     <header>
         <h1>ElectroSafe</h1>
         <p>Plataforma de Gestión y Consulta del Electrobisturí</p>
+        <p>Valleylab Force FX · Medtronic</p>
     </header>
 
-
-    <!-- ================= NAVEGACIÓN ================= -->
+    <!-- MENÚ -->
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#equipo">Equipo</a>
+        <a href="#justificacion">Justificación</a>
         <a href="#diagramas">Diagramas</a>
         <a href="#normatividad">Normatividad</a>
         <a href="#mantenimiento">Mantenimiento</a>
@@ -29,416 +27,204 @@
         <a href="#documentos">Documentos</a>
     </nav>
 
-
-    <!-- ================= INICIO ================= -->
+    <!-- INICIO -->
     <section id="inicio">
         <h2>Bienvenido a ElectroSafe</h2>
-
-        <p>
-            ElectroSafe es una plataforma web desarrollada para organizar,
-            consultar y presentar información relacionada con el electrobisturí
-            como equipo biomédico.
-        </p>
-
-        <p>
-            La plataforma permite consultar información técnica, normativa,
-            mantenimiento, riesgos, diagramas y documentos relacionados con
-            el equipo.
-        </p>
+        <p>ElectroSafe es una plataforma web desarrollada para organizar, consultar y presentar información relacionada con el electrobisturí como equipo biomédico.</p>
+        <p>La plataforma permite consultar información técnica, normativa, mantenimiento, riesgos, diagramas y documentos relacionados con el equipo.</p>
     </section>
 
-
-    <!-- ================= EQUIPO ================= -->
+    <!-- EQUIPO -->
     <section id="equipo">
         <h2>Equipo Biomédico</h2>
+        <h3>Electrobisturí Valleylab Force FX</h3>
 
-        <h3>Electrobisturí</h3>
+        <h4>¿Qué es?</h4>
+        <p>El Valleylab Force FX es un equipo de electrocirugía que utiliza energía eléctrica de alta frecuencia para generar efectos controlados sobre los tejidos.</p>
 
-        <p>
-            El electrobisturí es un equipo biomédico que utiliza corriente
-            eléctrica de alta frecuencia para realizar cortes y/o coagulación
-            de tejidos durante procedimientos quirúrgicos.
-        </p>
+        <h4>¿Para qué se utiliza?</h4>
+        <p>Se utiliza principalmente para realizar <strong>corte y coagulación</strong> durante procedimientos quirúrgicos, facilitando el control del tejido y del sangrado.</p>
 
-        <p>
-            Su funcionamiento requiere diferentes elementos electrónicos,
-            controles de usuario y sistemas de seguridad.
-        </p>
+        <h4>Principio general de funcionamiento</h4>
+        <p>El equipo genera energía de alta frecuencia (entre 300 kHz y 500 kHz) que se aplica al tejido mediante un electrodo. El efecto producido depende del modo de operación y de los parámetros seleccionados.</p>
+
+        <h4>Importancia en el entorno quirúrgico</h4>
+        <p>Su funcionamiento adecuado contribuye a la precisión del procedimiento, el control del sangrado y la seguridad del paciente.</p>
+
+        <h4>Seguridad del equipo</h4>
+        <p>Cuenta con sistemas de monitoreo, alarmas y protecciones que permiten detectar condiciones anormales y reducir riesgos durante su funcionamiento.</p>
+
+        <h4>Mantenimiento</h4>
+        <p>Requiere inspecciones y verificaciones periódicas de sus componentes, accesorios, conexiones, funcionamiento y sistemas de seguridad.</p>
+
+        <h4>Gestión del equipo mediante ElectroSafe</h4>
+        <p>ElectroSafe permite organizar la información técnica del equipo, registrar mantenimientos, gestionar riesgos y conservar la trazabilidad de las intervenciones realizadas.</p>
     </section>
 
+    <!-- JUSTIFICACIÓN -->
+    <section id="justificacion">
+        <h2>Justificación técnica</h2>
+        <p>El equipo biomédico seleccionado para el desarrollo del proyecto es el <strong>electrobisturí Valleylab Force FX (Medtronic)</strong>, un generador electroquirúrgico de alta frecuencia utilizado en cirugía general, ginecología, urología y otras especialidades.</p>
+        <p>La elección de este equipo se fundamenta en su importancia dentro del entorno hospitalario y en la necesidad de garantizar su funcionamiento seguro mediante programas de mantenimiento preventivo, correctivo y predictivo.</p>
+        <p>Una falla en el electrobisturí puede afectar la seguridad del paciente y la continuidad del procedimiento quirúrgico, por lo que es indispensable llevar un control de su hoja de vida, historial de mantenimientos, accesorios y pruebas de seguridad eléctrica.</p>
+    </section>
 
-    <!-- ================= DIAGRAMAS ================= -->
+    <!-- DIAGRAMAS -->
     <section id="diagramas">
         <h2>Diagramas</h2>
-
-        <div class="contenedor-documentos">
-
-            <!-- DIAGRAMA DE BLOQUES -->
-            <div class="documento">
+        <div class="contenedor">
+            <div class="tarjeta">
                 <h3>Diagrama de Bloques</h3>
-
-                <p>
-                    Representación de los principales componentes y etapas
-                    del funcionamiento del electrobisturí.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('img/diagrama-bloques.pdf', 'Diagrama de Bloques')">
-                    Ver diagrama
-                </button>
+                <p>Representación de los principales componentes y etapas del funcionamiento del electrobisturí.</p>
+                <button onclick="abrirPDF('img/diagrama-bloques.pdf', 'Diagrama de Bloques')">Ver diagrama</button>
             </div>
-
-
-            <!-- DIAGRAMA DE FLUJO -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Diagrama de Flujo</h3>
-
-                <p>
-                    Representación del proceso de navegación y consulta
-                    dentro de la plataforma ElectroSafe.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('img/diagrama-flujo.pdf', 'Diagrama de Flujo')">
-                    Ver diagrama
-                </button>
+                <p>Representación del proceso de operación del equipo (encendido, autodiagnóstico, verificación REM, activación y alarmas).</p>
+                <button onclick="abrirPDF('img/diagrama-flujo.pdf', 'Diagrama de Flujo')">Ver diagrama</button>
             </div>
-
         </div>
     </section>
 
-
-    <!-- ================= NORMATIVIDAD ================= -->
+    <!-- NORMATIVIDAD -->
     <section id="normatividad">
         <h2>Normatividad</h2>
-
-        <p>
-            En esta sección se presenta información relacionada con las
-            normas y disposiciones aplicables a dispositivos médicos y
-            equipos biomédicos.
-        </p>
-
+        <p>Normas técnicas y regulatorias aplicables a dispositivos médicos y equipos biomédicos:</p>
         <ul>
-            <li>IEC 60601-1</li>
-            <li>IEC 60601-2-2</li>
-            <li>ISO 14971</li>
-            <li>Decreto 4725 de 2005</li>
-            <li>Resolución 4816 de 2008</li>
-            <li>Resolución 4002 de 2007</li>
+            <li><strong>IEC 60601-1</strong> — Seguridad general de equipos electromédicos</li>
+            <li><strong>IEC 60601-2-2</strong> — Requisitos particulares para equipos quirúrgicos de alta frecuencia</li>
+            <li><strong>ISO 14971</strong> — Gestión de riesgos de dispositivos médicos</li>
+            <li><strong>ISO 13485</strong> — Sistema de gestión de calidad para dispositivos médicos</li>
+            <li><strong>Decreto 4725 de 2005</strong> (modificado por Decreto 582 de 2017) — Régimen de registros sanitarios (INVIMA)</li>
+            <li><strong>Resolución 3100 de 2019</strong> — Habilitación de servicios de salud</li>
         </ul>
     </section>
 
-
-    <!-- ================= MANTENIMIENTO ================= -->
+    <!-- MANTENIMIENTO -->
     <section id="mantenimiento">
         <h2>Mantenimiento</h2>
-
-        <p>
-            El mantenimiento de un electrobisturí permite conservar el equipo
-            en condiciones adecuadas de funcionamiento y seguridad.
-        </p>
-
-        <p>
-            Las actividades pueden incluir inspección, limpieza, pruebas
-            funcionales, revisión de conexiones eléctricas y mantenimiento
-            preventivo.
-        </p>
+        <p>El mantenimiento de un electrobisturí permite conservar el equipo en condiciones adecuadas de funcionamiento y seguridad.</p>
+        <p>Las actividades incluyen inspección, limpieza, pruebas funcionales, revisión de conexiones eléctricas, verificación de potencia de salida, estado de electrodos, continuidad de la placa de retorno y pruebas de seguridad eléctrica.</p>
     </section>
 
-
-    <!-- ================= RIESGOS ================= -->
+    <!-- RIESGOS -->
     <section id="riesgos">
         <h2>Riesgos</h2>
-
-        <p>
-            El uso de un electrobisturí puede presentar diferentes riesgos
-            asociados al equipo, al paciente, al operador y al entorno.
-        </p>
-
+        <p>El uso de un electrobisturí puede presentar diferentes riesgos asociados al equipo, al paciente, al operador y al entorno:</p>
         <ul>
-            <li>Riesgo eléctrico</li>
-            <li>Riesgo de quemaduras</li>
-            <li>Riesgo de incendio</li>
-            <li>Riesgo asociado a una mala conexión</li>
-            <li>Riesgo por mantenimiento inadecuado</li>
+            <li>Riesgo eléctrico (fugas de corriente o fallas de aislamiento)</li>
+            <li>Riesgo de quemaduras (por electrodo de retorno o alta densidad de corriente)</li>
+            <li>Riesgo de incendio (gases inflamables o materiales combustibles)</li>
+            <li>Riesgo asociado a una mala conexión de electrodos o accesorios</li>
+            <li>Riesgo por mantenimiento inadecuado o ausencia de pruebas de seguridad</li>
         </ul>
     </section>
 
-
-    <!-- ================= DOCUMENTOS ================= -->
+    <!-- DOCUMENTOS -->
     <section id="documentos">
-
         <h2>Documentos</h2>
-
-        <div class="contenedor-documentos">
-
-
-            <!-- 01 MANUAL -->
-            <div class="documento">
+        <div class="contenedor">
+            <div class="tarjeta">
                 <h3>Manual ElectroSafe</h3>
-
-                <p>
-                    Manual técnico y de utilización de la plataforma.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/01_Manual_ElectroSafe.pdf', 'Manual ElectroSafe')">
-                    Ver documento
-                </button>
+                <p>Manual técnico y de utilización de la plataforma.</p>
+                <button onclick="abrirPDF('documentos/01_Manual_ElectroSafe.pdf', 'Manual ElectroSafe')">Ver documento</button>
             </div>
-
-
-            <!-- 02 NORMATIVAS -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Normativas</h3>
-
-                <p>
-                    Normas y reglamentación relacionada con el equipo biomédico.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/02_Normativa.pdf', 'Normativas')">
-                    Ver documento
-                </button>
+                <p>Normas y reglamentación relacionada con el equipo biomédico.</p>
+                <button onclick="abrirPDF('documentos/02_Normativa.pdf', 'Normativas')">Ver documento</button>
             </div>
-
-
-            <!-- 03 APLICACIÓN -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Aplicación</h3>
-
-                <p>
-                    Información sobre el desarrollo y funcionamiento de
-                    ElectroSafe.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/03_Aplicacion.pdf', 'Aplicación')">
-                    Ver documento
-                </button>
+                <p>Información sobre el desarrollo y funcionamiento de ElectroSafe.</p>
+                <button onclick="abrirPDF('documentos/03_Aplicacion.pdf', 'Aplicación')">Ver documento</button>
             </div>
-
-
-            <!-- 04 MÓDULOS -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Módulos</h3>
-
-                <p>
-                    Descripción de los módulos que conforman la plataforma.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/04_Modulos.pdf', 'Módulos')">
-                    Ver documento
-                </button>
+                <p>Descripción de los módulos que conforman la plataforma.</p>
+                <button onclick="abrirPDF('documentos/04_Modulos.pdf', 'Módulos')">Ver documento</button>
             </div>
-
-
-            <!-- 05 BASE DE DATOS -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Base de Datos</h3>
-
-                <p>
-                    Estructura y organización de la base de datos de ElectroSafe.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/05_Base_de_Datos.pdf', 'Base de Datos')">
-                    Ver documento
-                </button>
+                <p>Estructura y organización de la base de datos de ElectroSafe.</p>
+                <button onclick="abrirPDF('documentos/05_Base_de_Datos.pdf', 'Base de Datos')">Ver documento</button>
             </div>
-
-
-            <!-- 06 CASOS DE USO -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Casos de Uso</h3>
-
-                <p>
-                    Descripción de las interacciones entre los usuarios
-                    y la plataforma.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/06_Casos_de_Uso.pdf', 'Casos de Uso')">
-                    Ver documento
-                </button>
+                <p>Descripción de las interacciones entre los usuarios y la plataforma.</p>
+                <button onclick="abrirPDF('documentos/06_Casos_de_Uso.pdf', 'Casos de Uso')">Ver documento</button>
             </div>
-
-
-            <!-- 07 ARQUITECTURA -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Arquitectura</h3>
-
-                <p>
-                    Descripción de la arquitectura y estructura de ElectroSafe.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/07_Arquitectura.pdf', 'Arquitectura')">
-                    Ver documento
-                </button>
+                <p>Descripción de la arquitectura y estructura de ElectroSafe.</p>
+                <button onclick="abrirPDF('documentos/07_Arquitectura.pdf', 'Arquitectura')">Ver documento</button>
             </div>
-
-
-            <!-- 09 INVESTIGACIÓN -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Investigación</h3>
-
-                <p>
-                    Información investigativa relacionada con el electrobisturí.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/09_Investigacion.pdf', 'Investigación')">
-                    Ver documento
-                </button>
+                <p>Información investigativa relacionada con el electrobisturí.</p>
+                <button onclick="abrirPDF('documentos/08_Investigacion.pdf', 'Investigación')">Ver documento</button>
             </div>
-
-
-            <!-- 10 MANTENIMIENTO -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Mantenimiento</h3>
-
-                <p>
-                    Información sobre mantenimiento preventivo y correctivo.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/10_Mantenimiento.pdf', 'Mantenimiento')">
-                    Ver documento
-                </button>
+                <p>Información sobre mantenimiento preventivo y correctivo.</p>
+                <button onclick="abrirPDF('documentos/09_Mantenimiento.pdf', 'Mantenimiento')">Ver documento</button>
             </div>
-
-
-            <!-- 11 RIESGOS -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Riesgos</h3>
-
-                <p>
-                    Identificación y prevención de riesgos relacionados
-                    con el electrobisturí.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/11_Riesgos.pdf', 'Riesgos')">
-                    Ver documento
-                </button>
+                <p>Identificación y prevención de riesgos relacionados con el electrobisturí.</p>
+                <button onclick="abrirPDF('documentos/10_Riesgos.pdf', 'Riesgos')">Ver documento</button>
             </div>
-
-
-            <!-- 12 BIBLIOGRAFÍA -->
-            <div class="documento">
+            <div class="tarjeta">
                 <h3>Bibliografía</h3>
-
-                <p>
-                    Fuentes bibliográficas utilizadas para el desarrollo
-                    del proyecto.
-                </p>
-
-                <button
-                    class="boton"
-                    onclick="abrirPDF('documentos/12_Bibliografia.pdf', 'Bibliografía')">
-                    Ver documento
-                </button>
+                <p>Fuentes bibliográficas utilizadas para el desarrollo del proyecto.</p>
+                <button onclick="abrirPDF('documentos/11_Bibliografia.pdf', 'Bibliografía')">Ver documento</button>
             </div>
-
         </div>
     </section>
 
-
-    <!-- ================= VISOR PDF ================= -->
-
+    <!-- VISOR PDF -->
     <div id="visorPDF" class="visor">
-
-        <div class="visor-contenido">
-
+        <div class="visor-caja">
             <div class="visor-header">
                 <h2 id="tituloPDF">Documento</h2>
-
-                <button
-                    class="cerrar"
-                    onclick="cerrarPDF()">
-                    ✕
-                </button>
+                <button class="cerrar" onclick="cerrarPDF()">✕</button>
             </div>
-
-            <iframe
-                id="pdfFrame"
-                src=""
-                title="Visor de documento">
-            </iframe>
-
+            <iframe id="pdfFrame" src=""></iframe>
         </div>
-
     </div>
 
-
-    <!-- ================= FOOTER ================= -->
-
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>
-            © 2026 ElectroSafe - Plataforma de Gestión y Consulta del Electrobisturí
-        </p>
+        <p>© 2026 ElectroSafe - Plataforma de Gestión y Consulta del Electrobisturí</p>
+        <p>Valleylab Force FX · Proyecto de Ingeniería Biomédica</p>
     </footer>
 
-
-    <!-- ================= JAVASCRIPT ================= -->
-
+    <!-- JAVASCRIPT -->
     <script>
-
         function abrirPDF(ruta, titulo) {
-
             document.getElementById("visorPDF").style.display = "flex";
-
             document.getElementById("tituloPDF").textContent = titulo;
-
             document.getElementById("pdfFrame").src = ruta;
         }
 
-
         function cerrarPDF() {
-
             document.getElementById("visorPDF").style.display = "none";
-
             document.getElementById("pdfFrame").src = "";
         }
 
-
-        // Cerrar al hacer clic fuera del documento
-        document.getElementById("visorPDF").addEventListener("click", function(event) {
-
-            if (event.target === this) {
-
+        // Cerrar al hacer clic fuera
+        document.getElementById("visorPDF").addEventListener("click", function(e) {
+            if (e.target === this) {
                 cerrarPDF();
-
             }
-
         });
 
-
-        // Cerrar con la tecla ESC
-        document.addEventListener("keydown", function(event) {
-
-            if (event.key === "Escape") {
-
+        // Cerrar con ESC
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
                 cerrarPDF();
-
             }
-
         });
-
     </script>
 
 </body>
