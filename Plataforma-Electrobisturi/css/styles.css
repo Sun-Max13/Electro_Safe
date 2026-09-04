@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
 }
 
+/* ENCABEZADO */
 header {
     background-color: #0b4f6c;
     color: white;
@@ -26,6 +27,7 @@ header p {
     margin-bottom: 4px;
 }
 
+/* MENÚ */
 nav {
     background-color: #083b50;
     text-align: center;
@@ -45,6 +47,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* SECCIONES */
 section {
     padding: 45px 10%;
 }
@@ -76,6 +79,7 @@ section ul li {
     margin-bottom: 6px;
 }
 
+/* TARJETAS */
 .contenedor {
     display: flex;
     flex-wrap: wrap;
@@ -101,6 +105,7 @@ section ul li {
     font-size: 0.95rem;
 }
 
+/* BOTONES */
 button {
     background-color: #0b4f6c;
     color: white;
@@ -115,6 +120,7 @@ button:hover {
     background-color: #083b50;
 }
 
+/* VISOR PDF */
 .visor {
     display: none;
     position: fixed;
@@ -168,6 +174,7 @@ button:hover {
     border: none;
 }
 
+/* PIE DE PÁGINA */
 footer {
     background: #083b50;
     color: white;
@@ -179,6 +186,7 @@ footer p {
     margin-bottom: 4px;
 }
 
+/* CELULARES */
 @media (max-width: 768px) {
     nav a {
         display: inline-block;
