@@ -147,30 +147,14 @@
             margin-top: 25px;
         }
 
-        /* FOTO DEL ELECTROBISTURÍ */
-
-        .foto-equipo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 30px 0 35px;
-        }
-
-        .foto-equipo img {
-            width: 100%;
-            max-width: 650px;
-            height: auto;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            border: 1px solid #dbe5ea;
+        .imagen-equipo {
             display: block;
-        }
-
-        .descripcion-foto {
-            text-align: center;
-            color: #52606d;
-            font-size: 0.9rem;
-            margin-top: 10px;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .visor {
@@ -258,10 +242,6 @@
             header h1 {
                 font-size: 2rem;
             }
-
-            .foto-equipo img {
-                max-width: 100%;
-            }
         }
     </style>
 </head>
@@ -315,6 +295,12 @@
             y documentación técnica.
         </p>
 
+        <img
+            src="img/electrobisturi.jpg"
+            alt="Electrobisturí Valleylab Force FX"
+            class="imagen-equipo"
+        >
+
     </section>
 
 
@@ -323,25 +309,6 @@
         <h2>Equipo Biomédico</h2>
 
         <h3>Electrobisturí Valleylab Force FX</h3>
-
-        <!-- FOTO DEL EQUIPO -->
-        <div class="foto-equipo">
-
-            <div>
-
-                <img
-                    src="img/electrobisturi.jpg"
-                    alt="Electrobisturí Valleylab Force FX">
-
-                <p class="descripcion-foto">
-                    Electrobisturí Valleylab Force FX utilizado como equipo
-                    de referencia para el proyecto ElectroSafe.
-                </p>
-
-            </div>
-
-        </div>
-
 
         <h4>¿Qué es?</h4>
 
@@ -398,20 +365,16 @@
             trazabilidad de las intervenciones realizadas.
         </p>
 
-
-        <!-- MANUALES DEL EQUIPO -->
-
         <div class="boton-documento">
 
             <button onclick="abrirPDF(
                 'documentos/01_Manual_ElectroSafe.pdf',
                 'Manual ElectroSafe'
             )">
-                📄 Ver Manual ElectroSafe
+                📄 Ver Manual
             </button>
 
         </div>
-
 
         <div class="boton-documento">
 
@@ -419,7 +382,7 @@
                 'documentos/12_Manual_Servicio_Force_FX.pdf',
                 'Manual de Servicio Valleylab Force FX'
             )">
-                📘 Ver Manual de Servicio
+                🔧 Ver Manual de Servicio
             </button>
 
         </div>
@@ -681,47 +644,35 @@
         <div class="contenedor">
 
             <div class="tarjeta">
-
                 <h3>Equipo biomédico</h3>
-
                 <p>
                     Identificación, fabricante, modelo, número de serie,
                     ubicación, estado y fecha de adquisición.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Mantenimiento</h3>
-
                 <p>
                     Registro del tipo de mantenimiento, fecha, actividades,
                     resultado y responsable.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Inspecciones</h3>
-
                 <p>
                     Registro de elementos revisados, resultados,
                     observaciones y responsables.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Riesgos</h3>
-
                 <p>
                     Registro de peligros, causas, consecuencias,
                     nivel de riesgo y controles.
                 </p>
-
             </div>
 
         </div>
@@ -729,7 +680,7 @@
         <div class="boton-documento">
 
             <button onclick="abrirPDF(
-                'documentos/05_Base_de_Datos.pdf?v=2',
+                'documentos/05_Base_de_Datos.pdf',
                 'Base de Datos'
             )">
                 📄 Ver documento
@@ -789,47 +740,35 @@
         <div class="contenedor">
 
             <div class="tarjeta">
-
                 <h3>Capa de presentación</h3>
-
                 <p>
                     Interfaz desarrollada mediante HTML y CSS para presentar
                     la información al usuario.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Lógica de aplicación</h3>
-
                 <p>
                     JavaScript controla las interacciones, navegación y
                     visualización de documentos.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Gestión documental</h3>
-
                 <p>
                     Organiza y permite consultar los documentos técnicos
                     almacenados en la plataforma.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Proyección de backend</h3>
-
                 <p>
                     La arquitectura puede evolucionar hacia una aplicación
                     con servidor y base de datos persistente.
                 </p>
-
             </div>
 
         </div>
@@ -889,36 +828,27 @@
         <div class="contenedor">
 
             <div class="tarjeta">
-
                 <h3>Mantenimiento preventivo</h3>
-
                 <p>
                     Incluye inspección visual, revisión de cables, conexiones,
                     accesorios, limpieza y pruebas funcionales.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Mantenimiento correctivo</h3>
-
                 <p>
                     Comprende identificación de fallas, diagnóstico,
                     reparación, verificación posterior y registro.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Trazabilidad</h3>
-
                 <p>
                     Permite conservar el historial técnico y registrar
                     las intervenciones realizadas.
                 </p>
-
             </div>
 
         </div>
@@ -1009,46 +939,34 @@
         <div class="contenedor">
 
             <div class="tarjeta">
-
                 <h3>Identificación</h3>
-
                 <p>
                     Consulta de información básica y características
                     del equipo.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Inspección</h3>
-
                 <p>
                     Organización de verificaciones y resultados
                     de inspección.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Mantenimiento</h3>
-
                 <p>
                     Registro y seguimiento de intervenciones técnicas.
                 </p>
-
             </div>
 
             <div class="tarjeta">
-
                 <h3>Gestión documental</h3>
-
                 <p>
                     Consulta organizada de manuales, normas y documentos
                     relacionados.
                 </p>
-
             </div>
 
         </div>
@@ -1078,25 +996,24 @@
         </p>
 
         <p>
-            Se incluyen referencias relacionadas con equipos electromédicos,
-            electrocirugía, gestión de riesgos y dispositivos médicos.
+            Las referencias completas, incluyendo los enlaces y URLs de las
+            fuentes consultadas, se encuentran disponibles en el documento
+            de bibliografía.
         </p>
 
         <div class="boton-documento">
 
             <button onclick="abrirPDF(
                 'documentos/11_Bibliografia.pdf',
-                'Bibliografía'
+                'Bibliografía y fuentes consultadas'
             )">
-                📄 Ver bibliografía
+                📚 Ver Bibliografía con URLs
             </button>
 
         </div>
 
     </section>
 
-
-    <!-- VISOR DE DOCUMENTOS PDF -->
 
     <div id="visorPDF" class="visor">
 
