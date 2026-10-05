@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroSafe · Plataforma</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--bg:#f3f7f9;--panel:#fff;--ink:#12303f;--muted:#516775;--line:#d6e2e8;--deep:#06293d;--teal:#0f766e;--amber:#e8a317;--sky:#38bdf8;--bad:#b42318;--ok:#157f3b}
+@media (prefers-color-scheme:dark){:root{--bg:#071a26;--panel:#0d2636;--ink:#e4eef3;--muted:#9bb2bf;--line:#1d3d50;--teal:#2dd4bf;--bad:#f97066;--ok:#4ade80}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Figtree,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+h1,h2,h3{font-family:'Bricolage Grotesque',Arial,sans-serif;line-height:1.15}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+header{background:var(--deep);color:#fff;padding:18px 5%;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header h1{font-size:1.6rem;flex:1}header a{color:var(--sky);font-size:.9rem}
+nav{position:sticky;top:0;z-index:20;background:var(--deep);border-bottom:3px solid var(--amber);display:flex;overflow-x:auto;padding:0 3%}
+nav button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-3px;color:#cfe3ec;font:500 .92rem Figtree,Arial;padding:13px 12px;cursor:pointer;white-space:nowrap}
+nav button.on{color:#fff;border-bottom-color:var(--sky)}
+main{max-width:1100px;margin:0 auto;padding:28px 5% 60px}
+.tab{display:none}.tab.on{display:block}
+h2{font-size:1.5rem;margin-bottom:6px}.sub{color:var(--muted);margin-bottom:18px;max-width:70ch}
+.box{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:18px;margin-bottom:18px}
+.box h3{font-size:1.05rem;margin-bottom:10px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+label{font-size:.85rem;font-weight:700;display:flex;flex-direction:column;gap:4px}
+input,select,textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.full{grid-column:1/-1}
+button.b{background:var(--teal);color:#fff;border:0;border-radius:6px;padding:10px 16px;font:700 .9rem Figtree,Arial;cursor:pointer}
+@media (prefers-color-scheme:dark){button.b{color:#04222c}}
+button.s{background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:5px 10px;cursor:pointer;font:inherit;font-size:.82rem}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:700}
+.wrap{overflow-x:auto}
+.vacio{color:var(--muted);font-style:italic;padding:8px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:6px;padding:14px}
+.kpi b{display:block;font:800 2rem 'Bricolage Grotesque',Arial}.kpi span{color:var(--muted);font-size:.85rem}
+.bar{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}.bar i{display:block;height:16px;background:var(--teal);border-radius:3px;min-width:2px}
+.fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.fotos figure{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.fotos img{width:100%;height:140px;object-fit:cover;display:block}.fotos figcaption{padding:8px;font-size:.85rem}
+.chk{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center}
+.chk div{display:flex;gap:10px;font-size:.85rem}.chk div label{flex-direction:row;font-weight:500;gap:4px;align-items:center}.chk div input{width:auto}
+#chat{max-height:380px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.m{padding:10px 12px;border-radius:8px;max-width:85%;white-space:pre-wrap}.u{background:var(--teal);color:#fff;align-self:flex-end}
+.a{background:var(--bg);border:1px solid var(--line)}.a small{display:block;color:var(--muted);margin-top:6px}
+#qr{display:inline-block;background:#fff;padding:12px;border-radius:6px}
+.hvqr{background:var(--amber);color:#1b1300;padding:14px 5%;font-weight:500}
+.nota{font-size:.85rem;color:var(--muted);margin-top:10px}
+</style>
+</head>
+<body>
+<header><h1>ElectroSafe · Plataforma</h1><a href="index.html">Volver a la documentación</a></header>
+<div id="hvqr" class="hvqr" hidden></div>
+<nav id="tabs">
+ <button data-tab="dash" class="on">Dashboard</button><button data-tab="equipo">Equipo y hoja de vida</button><button data-tab="inv">Inventario</button><button data-tab="mant">Mantenimiento</button><button data-tab="chk">Checklist</button><button data-tab="fotos">Evidencias</button><button data-tab="docs">Manuales</button><button data-tab="ia">Asistente IA</button>
+</nav>
+<main>
+
+<section class="tab on" id="dash">
+ <h2>Dashboard</h2><p class="sub">Indicadores calculados solo con los registros que ingresa el grupo. Si no hay registros, aparecen vacíos.</p>
+ <div class="kpis" id="kpis"></div>
+ <div class="box"><h3>Mantenimientos por tipo</h3><div id="bars"></div></div>
+ <div class="box"><h3>Copia de seguridad</h3>
+  <button class="b" id="exp" type="button">Exportar datos (JSON)</button>
+  <label style="display:inline-flex;margin-left:10px">Importar<input type="file" id="imp" accept=".json"></label>
+  <p class="nota">Los datos se guardan en este navegador. Exporta una copia antes de la sustentación o para llevarlos a otro equipo.</p></div>
+</section>
+
+<section class="tab" id="equipo">
+ <h2>Equipo y hoja de vida</h2><p class="sub">Registro del electrobisturí. Completa los campos que faltan con los datos reales de la placa del equipo.</p>
+ <div class="box"><form id="fEq">
+  <label>Marca<input name="marca" required></label><label>Modelo<input name="modelo" required></label>
+  <label>Serie<input name="serie"></label><label>Fabricante<input name="fabricante"></label>
+  <label>Año<input name="anio" type="number" min="1980" max="2100"></label><label>Servicio<input name="servicio" placeholder="Ej.: Cirugía"></label>
+  <label>Estado<select name="estado"><option>Operativo</option><option>En mantenimiento</option><option>Fuera de servicio</option></select></label>
+  <div class="full"><button class="b">Guardar hoja de vida</button></div></form></div>
+ <div class="box"><h3>Código QR de la hoja de vida</h3>
+  <div id="qr"></div>
+  <p class="nota">El QR lleva los datos de la hoja de vida dentro del enlace, así que al escanearlo se ven en cualquier celular sin base de datos. Para que funcione fuera de tu computador, la página debe estar publicada (por ejemplo en GitHub Pages). Regenéralo cada vez que cambies la hoja de vida.</p>
+  <p class="nota" id="qrurl" style="word-break:break-all"></p></div>
+</section>
+
+<section class="tab" id="inv">
+ <h2>Inventario</h2><p class="sub">Accesorios, consumibles y su fotografía.</p>
+ <div class="box"><form id="fInv">
+  <label>Tipo<select name="tipo"><option>Accesorio</option><option>Consumible</option></select></label>
+  <label>Nombre<input name="nombre" required></label><label>Cantidad<input name="cant" type="number" min="0" required></label>
+  <label>Fotografía<input name="foto" type="file" accept="image/*"></label>
+  <div class="full"><button class="b">Agregar al inventario</button></div></form></div>
+ <div class="box wrap" id="tInv"></div>
+</section>
+
+<section class="tab" id="mant">
+ <h2>Mantenimiento e historial</h2><p class="sub">Registra cada intervención. El historial y el dashboard se alimentan de aquí.</p>
+ <div class="box"><form id="fMant">
+  <label>Fecha<input name="fecha" type="date" required></label>
+  <label>Tipo<select name="tipo"><option>Preventivo</option><option>Correctivo</option><option>Predictivo</option></select></label>
+  <label>Estado<select name="estado"><option>Realizado</option><option>Programado</option></select></label>
+  <label>Responsable<input name="resp" required></label>
+  <label>Horas fuera de servicio<input name="horas" type="number" min="0" step="0.5" value="0"></label>
+  <label class="full">Descripción de la actividad<textarea name="desc" rows="2" required></textarea></label>
+  <div class="full"><button class="b">Registrar</button></div></form></div>
+ <div class="box wrap" id="tMant"></div>
+</section>
+
+<section class="tab" id="chk">
+ <h2>Checklist de inspección</h2><p class="sub">Marca el resultado real de cada punto durante la inspección.</p>
+ <div class="box"><form id="fChk"><label>Fecha<input name="fecha" type="date" required></label><label>Inspector<input name="resp" required></label>
+  <div class="full chk" id="items"></div>
+  <label class="full">Observaciones<textarea name="obs" rows="2"></textarea></label>
+  <div class="full"><button class="b">Guardar checklist</button></div></form></div>
+ <div class="box wrap" id="tChk"></div>
+</section>
+
+<section class="tab" id="fotos">
+ <h2>Evidencias fotográficas</h2><p class="sub">Fotos de inspecciones, fallas y reparaciones. Se reducen de tamaño para ahorrar espacio.</p>
+ <div class="box"><form id="fFoto"><label>Descripción<input name="titulo" required></label><label>Foto<input name="foto" type="file" accept="image/*" required></label>
+  <div class="full"><button class="b">Subir evidencia</button></div></form></div>
+ <div class="fotos" id="gFotos"></div>
+</section>
+
+<section class="tab" id="docs">
+ <h2>Manuales y documentación</h2><p class="sub">Todo lo que cargues aquí es la única fuente del asistente IA. Para que pueda responder, sube archivos de texto (.txt, .md) o pega el texto del manual o la norma. Los PDF se guardan para consulta, pero el asistente no los lee.</p>
+ <div class="box"><form id="fDoc"><label>Nombre del documento<input name="nombre" required></label>
+  <label>Archivo (.pdf, .txt, .md)<input name="arch" type="file" accept=".pdf,.txt,.md"></label>
+  <label class="full">O pega el texto<textarea name="texto" rows="4"></textarea></label>
+  <div class="full"><button class="b">Cargar documento</button></div></form></div>
+ <div class="box wrap" id="tDocs"></div>
+</section>
+
+<section class="tab" id="ia">
+ <h2>Asistente IA</h2><p class="sub">Responde únicamente con fragmentos de los documentos cargados en Manuales y cita la fuente. Si no encuentra la información, lo dice.</p>
+ <div class="box"><div id="chat"><div class="m a">Haz una pregunta sobre el equipo. Por ejemplo: ¿Qué IEC aplica? ¿Qué mantenimiento requiere?</div></div>
+  <form id="fIA" style="grid-template-columns:1fr auto"><input name="q" placeholder="Escribe tu pregunta" required autocomplete="off"><button class="b">Preguntar</button></form></div>
+</section>
+</main>
+
+<script>
+const K='electrosafe_db',$=s=>document.querySelector(s),
+ITEMS=['Inspección visual de carcasa y panel','Cable de alimentación y conexión a red','Cables y conectores de accesorios','Electrodo de retorno y su cable','Prueba funcional de corte y coagulación','Alarmas y sistemas de monitoreo','Seguridad eléctrica','Consumo de corriente','Limpieza del equipo'];
+let db=JSON.parse(localStorage.getItem(K)||'null')||{eq:{marca:'Valleylab',modelo:'Force FX',fabricante:'Medtronic',estado:'Operativo'},inv:[],mant:[],chk:[],fotos:[],docs:[]};
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(db))}catch(e){alert('El almacenamiento del navegador está lleno. Elimina fotos o documentos pesados.')}};
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fd=f=>Object.fromEntries(new FormData(f));
+const del=(k,i)=>`<button class="s" data-del="${k}:${i}">Eliminar</button>`;
+const tabla=(h,rows)=>rows.length?`<table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.join('')}</table>`:'<p class="vacio">Aún no hay registros.</p>';
+function foto(file,cb){const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const s=Math.min(1,800/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.6))};i.src=r.result};r.readAsDataURL(file)}
+const leer=(file,modo)=>new Promise(ok=>{const r=new FileReader();r.onload=()=>ok(r.result);modo==='t'?r.readAsText(file):r.readAsDataURL(file)});
+
+/* Pestañas */
+function tab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.id===id));document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===id));}
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)tab(b.dataset.tab)};
+
+/* Equipo + QR */
+$('#fEq').onsubmit=e=>{e.preventDefault();db.eq=fd(e.target);save();render()};
+function qr(){
+ const d=btoa(unescape(encodeURIComponent(JSON.stringify(db.eq)))),u=location.href.split('#')[0]+'#hv='+d;
+ $('#qr').innerHTML='';
+ try{new QRCode($('#qr'),{text:u,width:200,height:200,correctLevel:QRCode.CorrectLevel.L})}catch(e){$('#qr').textContent='No se pudo generar el QR (revisa la conexión a internet).'}
+ $('#qrurl').textContent=u.length>400?'':u;
+}
+function verHV(){
+ const m=location.hash.match(/^#hv=(.+)$/);if(!m)return;
+ try{const e=JSON.parse(decodeURIComponent(escape(atob(m[1]))));
+  $('#hvqr').hidden=false;$('#hvqr').innerHTML='<b>Hoja de vida (leída desde el QR):</b> '+['marca','modelo','serie','fabricante','anio','servicio','estado'].map(k=>k+': '+esc(e[k]||'—')).join(' · ');
+ }catch(x){}
+}
+
+/* Inventario */
+$('#fInv').onsubmit=async e=>{e.preventDefault();const o=fd(e.target),f=e.target.foto.files[0];delete o.foto;const fin=s=>{o.foto=s||'';db.inv.push(o);save();e.target.reset();render()};f?foto(f,fin):fin()};
+/* Mantenimiento */
+$('#fMant').onsubmit=e=>{e.preventDefault();db.mant.push(fd(e.target));save();e.target.reset();render()};
+/* Checklist */
+$('#items').innerHTML=ITEMS.map((t,i)=>`<span>${t}</span><div>${['OK','Falla','N/A'].map((v,j)=>`<label><input type="radio" name="i${i}" value="${v}" ${j==2?'checked':''}>${v}</label>`).join('')}</div>`).join('');
+$('#fChk').onsubmit=e=>{e.preventDefault();const o=fd(e.target);o.res=ITEMS.map((t,i)=>o['i'+i]);db.chk.push({fecha:o.fecha,resp:o.resp,obs:o.obs,res:o.res});save();e.target.reset();render()};
+/* Evidencias */
+$('#fFoto').onsubmit=e=>{e.preventDefault();const t=e.target.titulo.value;foto(e.target.foto.files[0],s=>{db.fotos.push({titulo:t,src:s,fecha:new Date().toLocaleDateString()});save();e.target.reset();render()})};
+/* Manuales */
+$('#fDoc').onsubmit=async e=>{e.preventDefault();const f=e.target.arch.files[0],o={nombre:e.target.nombre.value,texto:e.target.texto.value,pdf:''};
+ if(f){if(/\.pdf$/i.test(f.name)){if(f.size>1.8e6)return alert('El PDF pesa más de 1,8 MB y no cabe en el navegador. Usa uno más liviano.');o.pdf=await leer(f,'d')}else o.texto+='\n\n'+await leer(f,'t')}
+ if(!o.texto&&!o.pdf)return alert('Adjunta un archivo o pega texto.');db.docs.push(o);save();e.target.reset();render()};
+document.addEventListener('click',e=>{
+ const d=e.target.closest('[data-del]');if(d){const[k,i]=d.dataset.del.split(':');db[k].splice(+i,1);save();render()}
+ const p=e.target.closest('[data-pdf]');if(p)fetch(db.docs[+p.dataset.pdf].pdf).then(r=>r.blob()).then(b=>open(URL.createObjectURL(b)));
+});
+
+/* Dashboard */
+function dash(){
+ const m=db.mant,real=m.filter(x=>x.estado==='Realizado'),prev=m.filter(x=>x.tipo==='Preventivo'),prevR=prev.filter(x=>x.estado==='Realizado');
+ const cump=prev.length?Math.round(prevR.length/prev.length*100)+'%':'—';
+ let disp='—';const fechas=m.map(x=>+new Date(x.fecha)).filter(Boolean);
+ if(fechas.length){const h=Math.max(24,(Date.now()-Math.min(...fechas))/36e5),f=real.reduce((s,x)=>s+(+x.horas||0),0);disp=Math.max(0,(1-f/h)*100).toFixed(1)+'%'}
+ const uc=db.chk.at(-1);let ult='—';if(uc){const ok=uc.res.filter(r=>r==='OK').length,ap=uc.res.filter(r=>r!=='N/A').length;ult=ap?Math.round(ok/ap*100)+'% OK':'—'}
+ const k=(n,l)=>`<div class="kpi"><b>${n}</b><span>${l}</span></div>`;
+ $('#kpis').innerHTML=k(db.eq.estado||'—','Estado del equipo')+k(m.length,'Mantenimientos registrados')+k(cump,'Cumplimiento preventivo (realizados / total)')+k(disp,'Disponibilidad (desde el primer registro)')+k(db.chk.length,'Checklists realizados')+k(ult,'Último checklist')+k(db.fotos.length,'Evidencias fotográficas');
+ const mx=Math.max(1,...['Preventivo','Correctivo','Predictivo'].map(t=>m.filter(x=>x.tipo===t).length));
+ $('#bars').innerHTML=['Preventivo','Correctivo','Predictivo'].map(t=>{const n=m.filter(x=>x.tipo===t).length;return`<div class="bar"><span style="width:90px">${t}</span><i style="width:${n/mx*70}%"></i>${n}</div>`}).join('');
+}
+
+function render(){
+ const e=db.eq;for(const k in e){const el=$('#fEq')[k];if(el)el.value=e[k]}
+ $('#tInv').innerHTML=tabla(['Tipo','Nombre','Cantidad','Foto',''],db.inv.map((x,i)=>`<tr><td>${esc(x.tipo)}</td><td>${esc(x.nombre)}</td><td>${esc(x.cant)}</td><td>${x.foto?`<img src="${x.foto}" alt="" height="48">`:'—'}</td><td>${del('inv',i)}</td></tr>`));
+ $('#tMant').innerHTML=tabla(['Fecha','Tipo','Estado','Responsable','Horas fuera','Descripción',''],db.mant.map((x,i)=>`<tr><td>${esc(x.fecha)}</td><td>${esc(x.tipo)}</td><td>${esc(x.estado)}</td><td>${esc(x.resp)}</td><td>${esc(x.horas)}</td><td>${esc(x.desc)}</td><td>${del('mant',i)}</td></tr>`));
+ $('#tChk').innerHTML=tabla(['Fecha','Inspector','Resultados','Observaciones',''],db.chk.map((x,i)=>`<tr><td>${esc(x.fecha)}</td><td>${esc(x.resp)}</td><td>${x.res.map((r,j)=>`<div><span style="color:${r==='Falla'?'var(--bad)':r==='OK'?'var(--ok)':'var(--muted)'}">${r}</span> · ${ITEMS[j]}</div>`).join('')}</td><td>${esc(x.obs)}</td><td>${del('chk',i)}</td></tr>`));
+ $('#gFotos').innerHTML=db.fotos.length?db.fotos.map((x,i)=>`<figure><img src="${x.src}" alt="${esc(x.titulo)}"><figcaption>${esc(x.titulo)}<br>${x.fecha} ${del('fotos',i)}</figcaption></figure>`).join(''):'<p class="vacio">Aún no hay evidencias.</p>';
+ $('#tDocs').innerHTML=tabla(['Documento','Contenido',''],db.docs.map((x,i)=>`<tr><td>${esc(x.nombre)}</td><td>${x.texto?'Texto para el asistente ('+x.texto.length+' caracteres)':''} ${x.pdf?`<button class="s" data-pdf="${i}">Abrir PDF</button>`:''}</td><td>${del('docs',i)}</td></tr>`));
+ dash();qr();
+}
+
+/* Asistente: responde solo con fragmentos de los documentos cargados */
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const STOP=new Set('que cual cuales como para por con los las del una uno unos unas este esta esto son sus nos mas pero sobre entre cuando donde debe tiene hacer puede quien'.split(' '));
+function buscar(q){
+ const t=[...new Set(norm(q).split(/[^a-z0-9]+/).filter(w=>w.length>2&&!STOP.has(w)))];if(!t.length)return[];
+ const hits=[];
+ db.docs.forEach(d=>{(d.texto||'').split(/\n\s*\n/).forEach(p=>{
+  for(let i=0;i<p.length;i+=600){const c=p.slice(i,i+600),n=norm(c),s=t.filter(w=>n.includes(w)).length;if(s)hits.push({s,c:c.trim(),f:d.nombre})}})});
+ const need=t.length>2?2:1;
+ return hits.filter(h=>h.s>=need).sort((a,b)=>b.s-a.s).slice(0,2);
+}
+$('#fIA').onsubmit=e=>{e.preventDefault();const q=e.target.q.value,c=$('#chat');
+ const add=(cl,t,src)=>{const d=document.createElement('div');d.className='m '+cl;d.textContent=t;if(src){const s=document.createElement('small');s.textContent='Fuente: '+src;d.append(s)}c.append(d);c.scrollTop=c.scrollHeight};
+ add('u',q);const r=buscar(q);
+ r.length?add('a',r.map(x=>x.c).join('\n\n'),[...new Set(r.map(x=>x.f))].join(', ')):add('a','No encuentro esa información en la documentación cargada. Sube el manual o la norma correspondiente en la pestaña Manuales (como texto) e inténtalo de nuevo.');
+ e.target.reset()};
+
+/* Copia de seguridad */
+$('#exp').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(db)],{type:'application/json'}));a.download='electrosafe-datos.json';a.click()};
+$('#imp').onchange=async e=>{try{db=Object.assign({eq:{},inv:[],mant:[],chk:[],fotos:[],docs:[]},JSON.parse(await leer(e.target.files[0],'t')));save();render()}catch(x){alert('El archivo no es válido.')}};
+
+verHV();render();
+</script>
+</body>
+</html>
