@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroSafe · Plataforma</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<script>const HVD={marca:'Valleylab',modelo:'Force FX-C',fabricante:'Medtronic',estado:'Operativo',tipo:'Generador electroquirúrgico aislado de alta frecuencia',aplicacion:'Corte y coagulación de tejidos en procedimientos quirúrgicos',seguridad:'Instant Response y monitoreo del electrodo de retorno (REM)',clasificacion:'Clase IIb (riesgo alto)',registro:'INVIMA (verificar número)'};
+const INV0=[['Unidad principal Valleylab Force FX-C','Accesorio'],['Pedal monopolar','Accesorio'],['Pedal bipolar','Accesorio'],['Lápiz de electrocirugía reutilizable','Accesorio'],['Cable de retorno REM','Retorno'],['Pinza bipolar','Accesorio'],['Cable de alimentación hospitalaria','Cable']];
+const CHK={Preventivo:[['Inspección visual del equipo y carcasa',''],['Revisión de cables y conexiones',''],['Revisión de accesorios (pedales, lápiz, pinza bipolar)',''],['Limpieza del equipo',''],['Cable de retorno REM en buen estado',''],['Alarma del electrodo de retorno (REM)','IEC 60601-2-2'],['Resistencia de tierra de protección','IEC 60601-1'],['Corriente de fuga a tierra','IEC 60601-1'],['Potencia de salida en modo corte','IEC 60601-2-2'],['Potencia de salida en modo coagulación','IEC 60601-2-2']],
+Correctivo:[['Falla identificada y descrita',''],['Diagnóstico realizado',''],['Reparación o cambio de repuesto ejecutado',''],['Verificación funcional posterior a la reparación',''],['Pruebas de seguridad eléctrica posteriores',''],['Intervención registrada en el historial','']]};
+const RIESGOS=[['Riesgo eléctrico: fugas de corriente, aislamiento o fallas eléctricas','—','—','—','Por definir','Prueba de corriente de fuga y resistencia de tierra'],['Riesgo térmico: quemaduras por aplicación inadecuada de energía','—','—','—','Por definir','Verificación de potencia de salida y capacitación'],['Electrodo de retorno: contacto inadecuado o pérdida de superficie efectiva','—','—','—','Por definir','Sistema REM y prueba de su alarma'],['Accesorios: fallas o conexiones incorrectas','—','—','—','Por definir','Inspección de cables, pedales y pinzas'],['Configuración: selección incorrecta de modo o parámetros','—','—','—','Por definir','Verificación funcional y consulta del manual'],['Incendio: materiales combustibles o condiciones ambientales inadecuadas','—','—','—','Por definir','Procedimientos de uso seguro']];
+const FAQ=[['¿Qué es el Valleylab Force FX?','Es un generador electroquirúrgico aislado de alta frecuencia usado para corte y coagulación de tejidos mediante corrientes de radiofrecuencia.'],['¿Qué es el sistema REM?','El REM (Return Electrode Monitor) monitorea la impedancia de la placa neutra colocada en el paciente. Si detecta un desprendimiento parcial, desactiva el generador y dispara una alarma sonora para reducir el riesgo de quemaduras.'],['¿Qué mantenimiento requiere?','Inspecciones y verificaciones periódicas de componentes, accesorios, conexiones, funcionamiento y sistemas de seguridad: inspección visual, revisión de cables, limpieza y pruebas funcionales.'],['¿Qué normas aplican?','IEC 60601-1, IEC 60601-2-2, ISO 14971, ISO 13485, Decreto 4725 de 2005, Resolución 4816 de 2008 (tecnovigilancia) y Resolución 3100 de 2019.']];
+const KB=[
+{nombre:'ElectroSafe – El equipo',texto:'El Valleylab Force FX es un generador electroquirúrgico aislado de alta frecuencia, diseñado para procedimientos quirúrgicos donde se requiere el corte y la coagulación de tejidos biológicos mediante corrientes controladas de radiofrecuencia (RF).\n\nSe utiliza en salas de cirugía para realizar incisiones con mínima pérdida de sangre (corte) y para detener hemorragias mediante fulguración o desecación de los vasos (coagulación).'},
+{nombre:'ElectroSafe – Principio de funcionamiento',texto:'El equipo transforma la corriente alterna de la red hospitalaria (60 Hz) en corrientes de alta frecuencia (entre 200 kHz y 500 kHz). Al superar los 100 kHz la corriente ya no estimula el sistema neuromuscular y concentra una alta densidad térmica en la punta del electrodo activo.'},
+{nombre:'ElectroSafe – Sistemas de seguridad',texto:'La tecnología Instant Response sensa los cambios en la resistencia del tejido 200 veces por segundo y ajusta automáticamente el voltaje de salida.\n\nEl sistema REM (Return Electrode Monitor) monitorea constantemente la impedancia de la placa neutra del paciente; si detecta un desprendimiento parcial del parche, desactiva el generador y dispara una alarma sonora para mitigar el riesgo de quemaduras accidentales.'},
+{nombre:'ElectroSafe – Justificación técnica',texto:'La unidad electroquirúrgica se clasifica como dispositivo médico de alto riesgo porque transfiere energía eléctrica de gran magnitud al paciente. Un mal funcionamiento o la falta de verificación periódica puede causar quemaduras en el paciente por fugas de alta frecuencia o desprendimiento de la placa neutra, y microchoques por fallas en el aislamiento de la fuente de alimentación.'},
+{nombre:'ElectroSafe – Normatividad',texto:'IEC 60601-1: requisitos generales de seguridad y desempeño esencial.\n\nIEC 60601-2-2: requisitos particulares para equipos quirúrgicos de alta frecuencia y sus accesorios.\n\nISO 14971: gestión de riesgos aplicada a dispositivos médicos.\n\nDecreto 4725 de 2005: registros sanitarios, permisos de comercialización y vigilancia sanitaria. Resolución 4816 de 2008: Programa Nacional de Tecnovigilancia. Resolución 4002 de 2007: almacenamiento y acondicionamiento de dispositivos médicos.\n\nISO 13485:2016: sistema de gestión de calidad para dispositivos médicos; soporta la trazabilidad y documentación del mantenimiento. Resolución 3100 de 2019: habilitación de servicios de salud, incluido el mantenimiento de equipos biomédicos.'},
+{nombre:'ElectroSafe – Mantenimiento',texto:'El mantenimiento preventivo incluye inspección visual, revisión de cables, conexiones y accesorios, limpieza y pruebas funcionales.\n\nEl mantenimiento correctivo comprende identificación de fallas, diagnóstico, reparación, verificación y registro.\n\nLa trazabilidad permite conservar el historial técnico y registrar las intervenciones realizadas.'},
+{nombre:'ElectroSafe – Pruebas de funcionamiento',texto:'Las verificaciones técnicas y de seguridad eléctrica se basan en la norma IEC 60601-2-2: prueba de resistencia de tierra de protección, prueba de corriente de fuga a tierra, prueba de potencia de salida en modo corte, prueba de potencia de salida en modo coagulación y verificación del sistema de alarma del electrodo de retorno (REM).'},
+{nombre:'ElectroSafe – Riesgos',texto:'Riesgo eléctrico: fugas de corriente, aislamiento o fallas eléctricas. Riesgo térmico: quemaduras por aplicación inadecuada de energía. Electrodo de retorno: contacto inadecuado o pérdida de superficie efectiva. Accesorios: fallas o conexiones incorrectas. Configuración: selección incorrecta de modo o parámetros. Incendio: presencia de materiales combustibles o condiciones ambientales inadecuadas.'}];
+async function pdfInline(el,url,titulo){let u=url;try{if(/^data:/.test(url))u=URL.createObjectURL(await (await fetch(url)).blob())}catch(e){}
+el.innerHTML='<div class="box"><h3>'+titulo+'</h3><p class="nota" style="margin:0 0 8px">Si el visor sale en blanco, el archivo no está en esa ruta del repositorio: <a href="'+u+'" target="_blank" rel="noopener">abrir '+u.slice(0,60)+' en otra pestaña</a>.</p><iframe src="'+u+'" title="'+titulo+'" style="width:100%;height:78vh;border:1px solid var(--line);border-radius:8px;background:#fff"></iframe></div>'}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--bg:#f3f7f9;--panel:#fff;--ink:#12303f;--muted:#516775;--line:#d6e2e8;--deep:#06293d;--teal:#0f766e;--amber:#e8a317;--sky:#38bdf8;--bad:#b42318;--ok:#157f3b}
+@media (prefers-color-scheme:dark){:root{--bg:#071a26;--panel:#0d2636;--ink:#e4eef3;--muted:#9bb2bf;--line:#1d3d50;--teal:#2dd4bf;--bad:#f97066;--ok:#4ade80}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Figtree,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+h1,h2,h3{font-family:'Bricolage Grotesque',Arial,sans-serif;line-height:1.15}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+header{background:var(--deep);color:#fff;padding:18px 5%;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header h1{font-size:1.6rem;flex:1}header a{color:var(--sky);font-size:.9rem}
+nav{position:sticky;top:0;z-index:20;background:var(--deep);border-bottom:3px solid var(--amber);display:flex;overflow-x:auto;padding:0 3%}
+nav button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-3px;color:#cfe3ec;font:500 .92rem Figtree,Arial;padding:13px 12px;cursor:pointer;white-space:nowrap}
+nav button.on{color:#fff;border-bottom-color:var(--sky)}
+main{max-width:1100px;margin:0 auto;padding:28px 5% 60px}
+.tab{display:none}.tab.on{display:block}
+h2{font-size:1.5rem;margin-bottom:6px}.sub{color:var(--muted);margin-bottom:18px;max-width:70ch}
+.box{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:18px;margin-bottom:18px}
+.box h3{font-size:1.05rem;margin-bottom:10px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+label{font-size:.85rem;font-weight:700;display:flex;flex-direction:column;gap:4px}
+input,select,textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.full{grid-column:1/-1}
+button.b{background:var(--teal);color:#fff;border:0;border-radius:6px;padding:10px 16px;font:700 .9rem Figtree,Arial;cursor:pointer}
+@media (prefers-color-scheme:dark){button.b{color:#04222c}}
+button.s{background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:5px 10px;cursor:pointer;font:inherit;font-size:.82rem}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:700}
+.wrap{overflow-x:auto}
+.vacio{color:var(--muted);font-style:italic;padding:8px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:6px;padding:14px}
+.kpi b{display:block;font:800 2rem 'Bricolage Grotesque',Arial}.kpi span{color:var(--muted);font-size:.85rem}
+.bar{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}.bar i{display:block;height:16px;background:var(--teal);border-radius:3px;min-width:2px}
+.fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.fotos figure{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.fotos img{width:100%;height:140px;object-fit:cover;display:block}.fotos figcaption{padding:8px;font-size:.85rem}
+.chk{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center}
+.chk div{display:flex;gap:10px;font-size:.85rem}.chk div label{flex-direction:row;font-weight:500;gap:4px;align-items:center}.chk div input{width:auto}
+#chat{max-height:380px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.m{padding:10px 12px;border-radius:8px;max-width:85%;white-space:pre-wrap}.u{background:var(--teal);color:#fff;align-self:flex-end}
+.a{background:var(--bg);border:1px solid var(--line)}.a small{display:block;color:var(--muted);margin-top:6px}
+#qr{display:inline-block;background:#fff;padding:12px;border-radius:6px}
+.hvqr{background:var(--amber);color:#1b1300;padding:14px 5%;font-weight:500}
+.nota{font-size:.85rem;color:var(--muted);margin-top:10px}
+.pill{padding:2px 8px;border-radius:10px;font-size:.8rem;font-weight:700;color:#fff;white-space:nowrap}
+.r-Bajo{background:#157f3b}.r-Moderado{background:#a16207}.r-Alto{background:#c2410c}.r-Crítico{background:#b42318}
+details{border-bottom:1px solid var(--line);padding:8px 0}summary{cursor:pointer;font-weight:700}
+body{background:radial-gradient(1200px 400px at 85% -10%,rgba(56,189,248,.14),transparent),var(--bg)}
+header{background:linear-gradient(135deg,#06293d,#0f766e);padding:26px 5%;box-shadow:0 4px 18px rgba(6,41,61,.25)}
+header h1{font-size:2rem;letter-spacing:-.5px}header a{background:rgba(255,255,255,.14);padding:8px 14px;border-radius:99px;color:#fff;text-decoration:none}
+nav{background:var(--panel);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,.06);padding:8px 3%;gap:6px}
+nav button{color:var(--ink);border-radius:99px;border:0;margin:0;padding:9px 15px}nav button:hover{background:rgba(15,118,110,.12)}
+nav button.on{background:var(--teal);color:#fff}
+.box{border-radius:14px;border-left-width:1px;border-top:4px solid var(--teal);box-shadow:0 6px 20px rgba(6,41,61,.07)}
+.kpi{border-radius:14px;box-shadow:0 6px 20px rgba(6,41,61,.07);border-top-color:var(--teal)}.kpi b{font-size:2.2rem;color:var(--teal)}
+h2{font-size:1.8rem}button.b{border-radius:99px;padding:11px 20px;box-shadow:0 3px 10px rgba(15,118,110,.3)}
+button.s{border-radius:99px}input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+th{background:rgba(15,118,110,.08);font-size:.8rem;text-transform:uppercase;letter-spacing:.4px}
+tr:hover td{background:rgba(56,189,248,.06)}
+.grid{display:grid;gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(6,41,61,.07)}.card h3{margin-bottom:10px}
+.m{border-radius:14px}#qr{box-shadow:0 4px 14px rgba(0,0,0,.12)}
+</style>
+</head>
+<body>
+<header><h1>ElectroSafe · Plataforma</h1><a href="index.html">Volver a la documentación</a></header>
+<div id="hvqr" class="hvqr" hidden></div>
+<nav id="tabs">
+<button data-tab="dash" class="on">Dashboard</button><button data-tab="equipo">Registro y hoja de vida</button><button data-tab="inv">Inventario</button><button data-tab="mant">Mantenimiento e historial</button><button data-tab="chk">Checklist</button><button data-tab="pru">Pruebas y resultados</button><button data-tab="ins">Instrumentos y pruebas</button><button data-tab="fotos">Evidencias</button><button data-tab="riesgos">Riesgos y FAQ</button><button data-tab="docs">Manuales</button><button data-tab="bd">Base de datos</button><button data-tab="ia">Asistente IA</button>
+</nav>
+<main>
+<section class="tab on" id="dash"><h2>Dashboard</h2><p class="sub">Indicadores calculados con los registros reales del grupo (fórmulas del módulo de inventario). Sin registros aparecen vacíos.</p>
+<div class="kpis" id="kpis"></div>
+<div class="box"><h3>Mantenimientos por tipo</h3><div id="bars"></div></div>
+<div class="box"><h3>Informe técnico</h3><label>Conclusiones del grupo (las redacta el grupo a partir de sus resultados)<textarea id="concl" rows="3"></textarea></label><p style="margin-top:10px"><button class="b" id="inf" type="button">Generar informe técnico</button></p><p class="nota">Abre una hoja imprimible con todos los registros; desde ahí puedes guardarla como PDF.</p></div>
+<div class="box"><h3>Copia de seguridad</h3><button class="b" id="exp" type="button">Exportar datos (JSON)</button> <label style="display:inline-flex;margin-left:10px">Importar<input type="file" id="imp" accept=".json"></label><p class="nota">Los datos se guardan en este navegador. Exporta una copia antes de la sustentación.</p></div></section>
+<section class="tab" id="equipo"><h2>Registro del equipo y hoja de vida</h2><p class="sub">Precargada con la documentación del grupo. Los campos "Por verificar" se completan con la placa del equipo y los documentos de adquisición.</p>
+<div class="box"><form id="fEq"></form></div>
+<div class="box"><h3>Código QR de la hoja de vida</h3><div id="qr"></div><p class="nota">El QR lleva los datos principales dentro del enlace; al escanearlo se ven en cualquier celular. Funciona fuera de tu computador cuando la página está publicada. Regéneralo si cambias la hoja de vida (se actualiza al guardar).</p></div></section>
+<section class="tab" id="inv"><h2>Inventario</h2><p class="sub">Ficha de cada accesorio: usa Editar para completar fabricante, referencia, serie, estado, fechas y foto.</p>
+<div class="box"><form id="finv"></form></div><div class="box wrap" id="tinv"></div></section>
+<section class="tab" id="mant"><h2>Mantenimiento e historial</h2><p class="sub">Flujo: tipo de mantenimiento, actividad, checklist (pestaña Checklist), pruebas, evidencias, firma y guardado. Esto actualiza el historial y los indicadores.</p>
+<div class="box"><form id="fmant"></form></div><div class="box wrap" id="tmant"></div></section>
+<section class="tab" id="chk"><h2>Checklist</h2><p class="sub">Marca el resultado real de cada punto durante la inspección.</p>
+<div class="box"><form id="fChk"><label>Tipo<select name="tipo"><option>Preventivo</option><option>Correctivo</option></select></label><label>Fecha<input name="fecha" type="date" required></label><label>Técnico<input name="resp" required></label><div class="full chk" id="items"></div><label class="full">Observaciones<textarea name="obs" rows="2"></textarea></label><div class="full"><button class="b">Guardar checklist</button></div></form></div><div class="box wrap" id="tChk"></div></section>
+<section class="tab" id="pru"><h2>Pruebas funcionales y resultados</h2><p class="sub">Registra solo valores realmente medidos, con el instrumento usado. No se generan datos automáticamente.</p>
+<div class="box"><form id="fpru"></form></div><div class="box wrap" id="tpru"></div><div class="box"><h3>Interpretación del grupo</h3><textarea id="interp" rows="3" placeholder="Escribe aquí el análisis de los resultados"></textarea></div></section>
+<section class="tab" id="ins"><h2>Instrumentos y pruebas</h2><p class="sub">Ficha de cada prueba con su instrumento, procedimiento y criterio de aceptación. Completa cada campo con lo que dicen los documentos del grupo e indica el documento y la página. Lo que no esté completo aparece como "Por completar" y el asistente solo usa lo que se llene.</p>
+<div class="box"><form id="fins"></form></div><div class="grid" id="cins"></div></section>
+<section class="tab" id="fotos"><h2>Evidencias fotográficas</h2><p class="sub">Fotos de inspecciones, fallas y reparaciones. Se reducen de tamaño para ahorrar espacio.</p>
+<div class="box"><form id="fFoto"><label>Descripción<input name="titulo" required></label><label>Foto<input name="foto" type="file" accept="image/*" required></label><div class="full"><button class="b">Subir evidencia</button></div></form></div><div class="fotos" id="gFotos"></div></section>
+<section class="tab" id="riesgos"><h2>Riesgos y preguntas frecuentes</h2><p class="sub">Matriz de riesgos (Nivel = P × S; 1–4 Bajo, 5–9 Moderado, 10–14 Alto, 15–25 Crítico) y FAQ técnica de la documentación del grupo.</p>
+<div class="box wrap" id="tRie"></div><div class="box"><h3>FAQ técnica</h3><div id="faq"></div></div></section>
+<section class="tab" id="docs"><h2>Manuales y documentación</h2><p class="sub">La documentación del grupo ya está incluida. Lo que cargues aquí se suma como fuente del asistente. Sube .txt/.md o pega texto; los PDF se guardan pero el asistente no los lee.</p>
+<div class="box"><form id="fDoc"><label>Nombre del documento<input name="nombre" required></label><label>Archivo (.pdf, .txt, .md)<input name="arch" type="file" accept=".pdf,.txt,.md"></label><label class="full">O pega el texto<textarea name="texto" rows="4"></textarea></label><div class="full"><button class="b">Cargar documento</button></div></form></div><div class="box"><h3>Documentos del repositorio</h3><p class="nota" style="margin:0 0 10px">Se abren dentro de esta misma página.</p><div id="tPdfs"></div></div><div id="visorDoc"></div><div class="box wrap" id="tDocs"></div></section>
+<section class="tab" id="bd"><h2>Base de datos</h2><p class="sub">Tablas del sistema y cuántos registros tiene cada una. Los datos se guardan en este navegador. Exporta un script SQL para llevarlos a un motor como MySQL, PostgreSQL o SQLite.</p>
+<div class="box wrap" id="tBD"></div><div class="box"><button class="b" id="sql" type="button">Exportar script SQL</button><p class="nota">El script incluye la estructura y los registros. Las fotografías y los PDF no se exportan en el SQL; para respaldarlos usa Exportar datos (JSON) en el Dashboard.</p></div></section>
+<section class="tab" id="ia"><h2>Asistente IA</h2><p class="sub">Responde solo con fragmentos de la documentación incorporada (normas, protocolos, FAQ, hoja de vida y lo que cargues) y cita la fuente. Si no la encuentra, lo dice.</p>
+<div class="box"><div id="chat"><div class="m a">Pregunta sobre el equipo. Ejemplos: ¿Qué es el sistema REM? ¿Qué mantenimiento requiere? ¿Qué norma aplica a la gestión de riesgos?</div></div><form id="fIA" style="grid-template-columns:1fr auto"><input name="q" placeholder="Escribe tu pregunta" required autocomplete="off"><button class="b">Preguntar</button></form></div></section>
+</main>
+<script>
+const K='electrosafe_db',$=s=>document.querySelector(s),ESTI=['Bueno','Requiere revisión','Dañado','Fuera de servicio','No verificado','No aplica'];
+const D={
+eq:[['marca','Marca'],['modelo','Modelo'],['serie','Número de serie'],['fabricante','Fabricante / grupo'],['anio','Año de fabricación','number'],['servicio','Servicio / ubicación'],['estado','Estado','sel',['Por verificar','Operativo','En mantenimiento','Fuera de servicio']],['tipo','Tipo de equipo'],['aplicacion','Aplicación'],['modalidades','Modalidades'],['seguridad','Sistema de seguridad'],['gmdn','Código GMDN'],['clasificacion','Clasificación de riesgo'],['registro','Registro sanitario'],['vida','Vida útil de referencia'],['adquisicion','Fecha de adquisición','date'],['responsable','Responsable']],
+inv:[['nombre','Nombre'],['categoria','Categoría','sel',['Accesorio','Cable','Retorno','Consumible','Otro']],['fabricante','Fabricante'],['referencia','Referencia'],['serie','Número de serie'],['cant','Cantidad','number'],['estado','Estado','sel',ESTI],['disp','Disponible','sel',['Sí','No']],['prueba','Prueba funcional','sel',['pendiente','conforme','no conforme','no aplica']],['ingreso','Fecha de ingreso','date'],['ultima','Última inspección','date'],['proxima','Próxima inspección','date'],['obs','Observaciones','area'],['foto','Fotografía','file']],
+mant:[['fecha','Fecha','date'],['tipo','Tipo','sel',['Preventivo','Correctivo','Predictivo']],['estado','Estado','sel',['Realizado','Programado']],['resp','Técnico responsable'],['horas','Horas fuera de servicio','number'],['repuestos','Repuestos utilizados'],['resultado','Resultado final','sel',['Satisfactorio','No satisfactorio','Pendiente']],['firma','Firma (nombre)'],['desc','Falla / actividad y trabajo realizado','area']],
+pru:[['fecha','Fecha','date'],['prueba','Prueba o parámetro'],['esperado','Valor esperado / tolerancia'],['medido','Valor medido'],['unidad','Unidad'],['instrumento','Instrumento y certificado'],['resultado','Resultado','sel',['Conforme','No conforme']],['resp','Técnico']],
+ins:[['nombre','Prueba'],['verifica','Qué verifica','area'],['instrumento','Instrumento o accesorio necesario','area'],['procedimiento','Procedimiento resumido','area'],['criterio','Valor límite o criterio de aceptación','area'],['norma','Norma o documento que lo exige','area'],['fuente','Fuente (documento y página)','area']]};
+let db=JSON.parse(localStorage.getItem(K)||'null')||{};
+db=Object.assign({eq:{},inv:[],mant:[],chk:[],pru:[],ins:[],fotos:[],docs:[],concl:'',interp:''},db);
+for(const k in HVD)if(!db.eq[k])db.eq[k]=HVD[k];
+if(!db.seeded&&!db.inv.length){db.inv=INV0.map(([n,c])=>({nombre:n,categoria:/retorno/i.test(c)?'Retorno':c==='Cable'?'Cable':'Accesorio',estado:'No verificado',disp:'No'}));db.seeded=1}
+if(!db.seedIns&&!db.ins.length){db.ins=['Resistencia de tierra de protección','Corriente de fuga','Potencia de salida en corte y coagulación','Alarma del electrodo de retorno REM'].map(n=>({nombre:n}));db.seedIns=1}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(db))}catch(e){alert('El almacenamiento del navegador está lleno. Elimina fotos o PDF pesados.')}};
+const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const V=v=>esc(v)||'—',fd=f=>Object.fromEntries(new FormData(f));
+const del=(k,i)=>`<button class="s" data-del="${k}:${i}">Eliminar</button>`;
+const tabla=(h,rows)=>rows.length?`<table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.join('')}</table>`:'<p class="vacio">Aún no hay registros.</p>';
+const lista=(k,cols,ed=1)=>tabla([...cols.map(c=>c[0]),''],db[k].map((x,i)=>`<tr>${cols.map(c=>`<td>${c[1](x)}</td>`).join('')}<td>${ed?`<button class="s" data-ed="${k}:${i}">Editar</button> `:''}${del(k,i)}</td></tr>`));
+const PASA=v=>v==='OK'||v==='Sí',FALLA=v=>v==='NO'||v==='No';
+function foto(file,cb){const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const s=Math.min(1,800/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',.6))};i.src=r.result};r.readAsDataURL(file)}
+const leer=(f,m)=>new Promise(ok=>{const r=new FileReader();r.onload=()=>ok(r.result);m==='t'?r.readAsText(f):r.readAsDataURL(f)});
+function armar(sel,defs,btn){$(sel).innerHTML=defs.map(([n,l,t,o])=>`<label${t==='area'?' class="full"':''}>${l}${t==='sel'?`<select name="${n}">${o.map(x=>`<option>${x}</option>`).join('')}</select>`:t==='area'?`<textarea name="${n}" rows="2"></textarea>`:`<input name="${n}" type="${t||'text'}" ${t==='file'?'accept="image/*"':'placeholder="Por verificar"'}>`}</label>`).join('')+`<div class="full"><button class="b">${btn}</button></div>`}
+function tab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.id===id));document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===id))}
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)tab(b.dataset.tab)};
+
+armar('#fEq',D.eq,'Guardar hoja de vida');
+$('#fEq').onsubmit=e=>{e.preventDefault();db.eq=fd(e.target);save();render()};
+['inv','mant','pru','ins'].forEach(k=>{armar('#f'+k,D[k],'Guardar');$('#f'+k).onsubmit=e=>{e.preventDefault();const f=e.target,o=fd(f),i=f.dataset.edi,ed=i!==undefined,old=ed?db[k][+i]:{},file=f.foto&&f.foto.files[0];delete o.foto;
+ const fin=s=>{if(k==='inv')o.foto=s||old.foto||'';ed?db[k][+i]=o:db[k].push(o);delete f.dataset.edi;save();f.reset();render()};file?foto(file,fin):fin()}});
+document.addEventListener('click',e=>{
+ const d=e.target.closest('[data-del]');if(d){const[k,i]=d.dataset.del.split(':');db[k].splice(+i,1);save();render()}
+ const g=e.target.closest('[data-ed]');if(g){const[k,i]=g.dataset.ed.split(':'),f=$('#f'+k);Object.entries(db[k][+i]).forEach(([n,v])=>{if(f[n]&&f[n].type!=='file')f[n].value=v});f.dataset.edi=i;tab(k);f.scrollIntoView()}
+ const p=e.target.closest('[data-pdf],[data-ruta]');if(p){const r=p.dataset.ruta!==undefined?PDFS[+p.dataset.ruta]:[db.docs[+p.dataset.pdf].nombre,db.docs[+p.dataset.pdf].pdf];pdfInline($('#visorDoc'),r[1],r[0]);$('#visorDoc').scrollIntoView({behavior:'smooth'})}
+});
+
+/* Checklist */
+function items(){const t=$('#fChk').tipo.value;$('#items').innerHTML=CHK[t].map((r,i)=>`<span>${r[0]}${r[1]?` <small class="nota">(${r[1]})</small>`:''}</span><div>${(t==='Preventivo'?['OK','NO','N/A']:['Sí','No','N/A']).map((v,j)=>`<label><input type="radio" name="i${i}" value="${v}" ${j==2?'checked':''}>${v}</label>`).join('')}</div>`).join('')}
+$('#fChk').tipo.onchange=items;items();
+$('#fChk').onsubmit=e=>{e.preventDefault();const o=fd(e.target);db.chk.push({tipo:o.tipo,fecha:o.fecha,resp:o.resp,obs:o.obs,res:CHK[o.tipo].map((r,i)=>[r[0],o['i'+i]])});save();e.target.reset();items();render()};
+$('#fFoto').onsubmit=e=>{e.preventDefault();const t=e.target.titulo.value;foto(e.target.foto.files[0],s=>{db.fotos.push({titulo:t,src:s,fecha:new Date().toLocaleDateString()});save();e.target.reset();render()})};
+$('#fDoc').onsubmit=async e=>{e.preventDefault();const f=e.target.arch.files[0],o={nombre:e.target.nombre.value,texto:e.target.texto.value,pdf:''};
+ if(f){if(/\.pdf$/i.test(f.name)){if(f.size>1.8e6)return alert('El PDF pesa más de 1,8 MB y no cabe en el navegador.');o.pdf=await leer(f,'d')}else o.texto+='\n\n'+await leer(f,'t')}
+ if(!o.texto&&!o.pdf)return alert('Adjunta un archivo o pega texto.');db.docs.push(o);save();e.target.reset();render()};
+$('#concl').onchange=e=>{db.concl=e.target.value;save()};$('#interp').onchange=e=>{db.interp=e.target.value;save()};
+
+/* QR */
+const HVK=['marca','modelo','serie','fabricante','anio','servicio','estado','registro','gmdn'];
+function qr(){const q={};HVK.forEach(k=>q[k]=String(db.eq[k]||'').replace(/\s*\(.*$/,''));const u=location.href.split('#')[0]+'#hv='+btoa(unescape(encodeURIComponent(JSON.stringify(q))));$('#qr').innerHTML='';
+ try{new QRCode($('#qr'),{text:u,width:240,height:240,correctLevel:QRCode.CorrectLevel.L})}catch(e){$('#qr').textContent='No se pudo generar el QR (revisa la conexión a internet).'}}
+function verHV(){const m=location.hash.match(/^#hv=(.+)$/);if(!m)return;try{const e=JSON.parse(decodeURIComponent(escape(atob(m[1]))));$('#hvqr').hidden=false;$('#hvqr').innerHTML='<b>Hoja de vida (leída desde el QR):</b> '+HVK.map(k=>k+': '+V(e[k])).join(' · ')}catch(x){}}
+
+/* Indicadores */
+function ind(){const m=db.mant,R=m.filter(x=>x.estado==='Realizado'),C=R.filter(x=>x.tipo==='Correctivo'),pm=m.filter(x=>x.tipo==='Preventivo'),pmR=pm.filter(x=>x.estado==='Realizado');
+ const f=m.map(x=>+new Date(x.fecha)).filter(Boolean),H=f.length?Math.max(24,(Date.now()-Math.min(...f))/36e5):0,down=R.reduce((s,x)=>s+(+x.horas||0),0),up=Math.max(0,H-down);
+ return{cump:pm.length?Math.round(pmR.length/pm.length*100)+'%':'—',disp:H?(up/H*100).toFixed(1)+'%':'—',mtbf:H&&C.length?(up/C.length).toFixed(1)+' h':'—',mttr:C.length?(C.reduce((s,x)=>s+(+x.horas||0),0)/C.length).toFixed(1)+' h':'—',n:m.length}}
+const conf=c=>{const p=c.res.filter(r=>PASA(r[1])).length,n=p+c.res.filter(r=>FALLA(r[1])).length;return n?Math.round(p/n*100)+'%':'—'};
+function dash(){const i=ind(),u=db.chk.at(-1),k=(n,l)=>`<div class="kpi"><b>${n}</b><span>${l}</span></div>`;
+ $('#kpis').innerHTML=k(db.eq.estado||'—','Estado del equipo')+k(i.disp,'Disponibilidad (horas operativas / totales)')+k(i.mtbf,'MTBF (operación / nº de fallas)')+k(i.mttr,'MTTR (reparación / nº de reparaciones)')+k(i.cump,'Cumplimiento PM (ejecutados / programados)')+k(i.n,'Mantenimientos registrados')+k(db.chk.length,'Checklists realizados')+k(u?conf(u):'—','Conformidad del último checklist')+k(db.pru.length,'Pruebas funcionales')+k(db.fotos.length,'Evidencias fotográficas');
+ const T=['Preventivo','Correctivo','Predictivo'],mx=Math.max(1,...T.map(t=>db.mant.filter(x=>x.tipo===t).length));
+ $('#bars').innerHTML=T.map(t=>{const n=db.mant.filter(x=>x.tipo===t).length;return`<div class="bar"><span style="width:90px">${t}</span><i style="width:${n/mx*70}%"></i>${n}</div>`}).join('')}
+
+const TBD=()=>[['equipo',D.eq,[db.eq]],['inventario',D.inv.filter(d=>d[0]!=='foto'),db.inv],['mantenimiento',D.mant,db.mant],['pruebas_funcionales',D.pru,db.pru],['instrumentos_pruebas',D.ins,db.ins],['checklist',[['fecha'],['tipo'],['resp'],['obs']],db.chk],['evidencias',[['titulo'],['fecha']],db.fotos],['documentos',[['nombre'],['texto']],db.docs]];
+$('#sql').onclick=()=>{const q=s=>"'"+String(s??'').replace(/'/g,"''")+"'";let o='-- ElectroSafe: exportación '+new Date().toISOString()+'\n';
+ TBD().forEach(([n,c,r])=>{const cols=c.map(x=>'"'+x[0]+'"');o+=`CREATE TABLE ${n} (id INTEGER PRIMARY KEY, ${cols.map(x=>x+' TEXT').join(', ')});\n`;r.forEach((x,i)=>{o+=`INSERT INTO ${n} (id, ${cols.join(', ')}) VALUES (${i+1}, ${c.map(d=>q(x[d[0]])).join(', ')});\n`})});
+ o+='CREATE TABLE checklist_items (checklist_id INTEGER, item TEXT, resultado TEXT);\n';db.chk.forEach((x,i)=>x.res.forEach(r=>{o+=`INSERT INTO checklist_items VALUES (${i+1}, ${q(r[0])}, ${q(r[1])});\n`}));
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([o],{type:'text/plain'}));a.download='electrosafe.sql';a.click()};
+const PDFS=[['Manual ElectroSafe','documentos/01_Manual_ElectroSafe.pdf'],['Manual de servicio Force FX','documentos/12_Manual_Servicio_Force_FX.pdf'],['Normatividad','documentos/02_Normativa.pdf'],['Aplicación','documentos/03_Aplicacion.pdf'],['Módulos','documentos/04_Modulos.pdf'],['Base de datos','documentos/05_Base_de_Datos.pdf'],['Casos de uso','documentos/06_Casos_de_Uso.pdf'],['Arquitectura','documentos/07_Arquitectura.pdf'],['Investigación','documentos/08_Investigacion.pdf'],['Mantenimiento','documentos/09_Mantenimiento.pdf'],['Riesgos','documentos/10_Riesgos.pdf'],['Bibliografía','documentos/11_Bibliografia.pdf'],['Diagrama de bloques','img/diagrama-bloques.pdf'],['Diagrama de flujo','img/diagrama-flujo.pdf']];
+const insDocs=()=>db.ins.filter(x=>x.verifica||x.instrumento||x.procedimiento||x.criterio||x.norma).map(x=>({nombre:'Instrumentos y pruebas: '+x.nombre,texto:D.ins.map(d=>x[d[0]]?d[1]+': '+x[d[0]]:'').filter(Boolean).join('\n')}));
+function render(){
+ for(const k in db.eq){const el=$('#fEq')[k];if(el)el.value=db.eq[k]}
+ $('#concl').value=db.concl;$('#interp').value=db.interp;
+ $('#tinv').innerHTML=lista('inv',[['Elemento',x=>V(x.nombre)],['Categoría',x=>V(x.categoria)],['Cant.',x=>V(x.cant)],['Estado',x=>V(x.estado)],['Disp.',x=>V(x.disp)],['Prueba',x=>V(x.prueba)],['Próx. inspección',x=>V(x.proxima)],['Foto',x=>x.foto?`<img src="${x.foto}" alt="" height="44">`:'—']]);
+ $('#tmant').innerHTML=lista('mant',[['Fecha',x=>V(x.fecha)],['Tipo',x=>V(x.tipo)],['Estado',x=>V(x.estado)],['Técnico',x=>V(x.resp)],['Horas fuera',x=>V(x.horas)],['Actividad',x=>V(x.desc)],['Repuestos',x=>V(x.repuestos)],['Resultado',x=>V(x.resultado)],['Firma',x=>V(x.firma)]]);
+ $('#tChk').innerHTML=lista('chk',[['Fecha',x=>V(x.fecha)],['Tipo',x=>V(x.tipo)],['Técnico',x=>V(x.resp)],['Conformidad',x=>conf(x)],['Puntos',x=>x.res.map(r=>`<div><span style="color:${FALLA(r[1])?'var(--bad)':PASA(r[1])?'var(--ok)':'var(--muted)'}">${r[1]}</span> · ${esc(r[0])}</div>`).join('')],['Observaciones',x=>V(x.obs)]],0);
+ $('#tpru').innerHTML=lista('pru',[['Fecha',x=>V(x.fecha)],['Prueba',x=>V(x.prueba)],['Esperado',x=>V(x.esperado)],['Medido',x=>V(x.medido)+' '+esc(x.unidad)],['Instrumento',x=>V(x.instrumento)],['Resultado',x=>V(x.resultado)],['Técnico',x=>V(x.resp)]]);
+ $('#gFotos').innerHTML=db.fotos.length?db.fotos.map((x,i)=>`<figure><img src="${x.src}" alt="${esc(x.titulo)}"><figcaption>${esc(x.titulo)}<br>${x.fecha} ${del('fotos',i)}</figcaption></figure>`).join(''):'<p class="vacio">Aún no hay evidencias.</p>';
+ $('#tDocs').innerHTML=tabla(['Documento','Contenido',''],[...KB.map(x=>`<tr><td>${esc(x.nombre)}</td><td>Incluido por el grupo (${x.texto.length} caracteres)</td><td></td></tr>`),...db.docs.map((x,i)=>`<tr><td>${esc(x.nombre)}</td><td>${x.texto?'Texto para el asistente ('+x.texto.length+' caracteres)':''} ${x.pdf?`<button class="s" data-pdf="${i}">Abrir PDF</button>`:''}</td><td>${del('docs',i)}</td></tr>`)]);
+ $('#cins').innerHTML=db.ins.length?db.ins.map((x,i)=>`<div class="card" style="grid-column:1/-1"><h3>${esc(x.nombre)}</h3>${D.ins.slice(1).map(d=>`<p style="margin-bottom:8px"><b>${d[1]}:</b> ${x[d[0]]?esc(x[d[0]]):'<i class="vacio">Por completar</i>'}</p>`).join('')}<button class="s" data-ed="ins:${i}">Completar / editar</button> ${del('ins',i)}</div>`).join(''):'<p class="vacio">Aún no hay pruebas.</p>';
+ $('#tPdfs').innerHTML=PDFS.map((r,i)=>`<button class="s" style="margin:0 8px 8px 0" data-ruta="${i}">${r[0]}</button>`).join('');
+ $('#tBD').innerHTML=tabla(['Tabla','Registros','Campos'],[...TBD().map(([n,c,r])=>`<tr><td>${n}</td><td>${r.length}</td><td>${c.map(x=>x[0]).join(', ')}</td></tr>`),`<tr><td>checklist_items</td><td>${db.chk.reduce((s,x)=>s+x.res.length,0)}</td><td>checklist_id, item, resultado</td></tr>`]);
+ dash();qr()}
+$('#tRie').innerHTML=tabla(['Riesgo','P','S','Nivel','Clasificación','Control'],RIESGOS.map(r=>`<tr><td>${esc(r[0])}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td><span class="pill r-${r[4]}">${r[4]}</span></td><td>${esc(r[5])}</td></tr>`));
+$('#faq').innerHTML=FAQ.map(q=>`<details><summary>${esc(q[0])}</summary><p style="margin-top:6px">${esc(q[1])}</p></details>`).join('');
+
+/* Informe técnico */
+$('#inf').onclick=()=>{const w=open('','_blank'),t=(h,r)=>r.length?`<table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${r.join('')}</table>`:'<p><i>Sin registros.</i></p>',i=ind(),c=x=>`<td>${V(x)}</td>`;
+ w.document.write(`<!DOCTYPE html><meta charset="utf-8"><title>Informe técnico ElectroSafe</title><style>body{font:14px Arial;max-width:900px;margin:24px auto;padding:0 16px}table{border-collapse:collapse;width:100%;margin:8px 0 18px;font-size:12px}td,th{border:1px solid #999;padding:4px;text-align:left}h1,h2{color:#06293d}@media print{button{display:none}}</style>
+<button onclick="print()">Imprimir / guardar como PDF</button><h1>Informe técnico · ElectroSafe</h1><p>Fecha de generación: ${new Date().toLocaleDateString()}</p>
+<h2>1. Identificación del equipo</h2>${t(['Campo','Valor'],D.eq.map(d=>`<tr><td>${d[1]}</td>${c(db.eq[d[0]])}</tr>`))}
+<h2>2. Indicadores</h2>${t(['Indicador','Valor'],[['Disponibilidad',i.disp],['MTBF',i.mtbf],['MTTR',i.mttr],['Cumplimiento PM',i.cump],['Mantenimientos registrados',i.n]].map(r=>`<tr><td>${r[0]}</td>${c(r[1])}</tr>`))}
+<h2>3. Historial de mantenimiento</h2>${t(['Fecha','Tipo','Estado','Técnico','Horas','Actividad','Repuestos','Resultado'],db.mant.map(x=>`<tr>${[x.fecha,x.tipo,x.estado,x.resp,x.horas,x.desc,x.repuestos,x.resultado].map(c).join('')}</tr>`))}
+<h2>4. Checklists</h2>${t(['Fecha','Tipo','Técnico','Conformidad','Observaciones'],db.chk.map(x=>`<tr>${[x.fecha,x.tipo,x.resp,conf(x),x.obs].map(c).join('')}</tr>`))}
+<h2>5. Pruebas funcionales</h2>${t(['Fecha','Prueba','Esperado','Medido','Instrumento','Resultado'],db.pru.map(x=>`<tr>${[x.fecha,x.prueba,x.esperado,x.medido+' '+x.unidad,x.instrumento,x.resultado].map(c).join('')}</tr>`))}
+<h2>6. Interpretación y conclusiones del grupo</h2><p>${V(db.interp)}</p><p>${V(db.concl)}</p>`);w.document.close()};
+
+/* Asistente: solo documentación incorporada */
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const STOP=new Set('que cual cuales como para por con los las del una uno unos unas este esta esto son sus nos mas pero sobre entre cuando donde debe tiene hacer puede quien'.split(' '));
+const GEN={electrobisturi:'electroquirurg',electrobisturis:'electroquirurg',equipo:'electroquirurg',equipos:'electroquirurg',valleylab:'electroquirurg',force:'electroquirurg',fx:'electroquirurg',electrosafe:'electroquirurg'};
+const SYN={sirve:'utiliza',sirven:'utiliza',usa:'utiliza',usan:'utiliza',uso:'utiliza',usos:'utiliza',funciona:'funcionamiento',opera:'funcionamiento',cuidados:'mantenimiento',revisar:'inspeccion',revision:'inspeccion',peligros:'riesgo',peligro:'riesgo',alarma:'alarma',alarmas:'alarma'};
+['tiene','tienen','hacen','hace','existe','dime','explica','explicame','quiero','saber','sobre','cuanto','cuanta','esta','estan','puedes','podrias','aplican','requiere','necesita','necesito'].forEach(w=>STOP.add(w));
+function buscar(q){
+ const raw=[...new Set(norm(q).split(/[^a-z0-9]+/).filter(w=>w.length>2&&!STOP.has(w)))];
+ const T=raw.map(w=>GEN[w]?{s:GEN[w],g:1}:{s:(SYN[w]||w).length<=4?(SYN[w]||w):(SYN[w]||w).slice(0,5),g:0});
+ if(!T.length)return[];
+ const C=[];[...KB,...db.docs,...insDocs()].forEach(d=>(d.texto||'').split(/\n\s*\n/).forEach(p=>{for(let i=0;i<p.length;i+=700){const c=p.slice(i,i+700).trim();if(c)C.push({c,f:d.nombre,n:norm(d.nombre).split(/[^a-z0-9]+/),w:norm(c+' '+d.nombre).split(/[^a-z0-9]+/)})}}));
+ const has=(ch,s)=>ch.w.some(x=>x.startsWith(s)),cnt=(ch,s)=>ch.w.filter(x=>x.startsWith(s)).length,N=C.length;
+ T.forEach(t=>{const df=C.filter(ch=>has(ch,t.s)).length;t.i=Math.log(1+N/(1+df))*(t.g?.3:1)});
+ const S=T.filter(t=>!t.g),totS=S.reduce((a,t)=>a+t.i,0);
+ const R=C.map(ch=>{const m=T.filter(t=>has(ch,t.s)),ms=m.filter(t=>!t.g).reduce((a,t)=>a+t.i,0);return{c:ch.c,f:ch.f,s:m.reduce((a,t)=>a+t.i*(1+.3*Math.min(cnt(ch,t.s)-1,3)+(ch.n.some(x=>x.startsWith(t.s))?1:0)),0),ok:S.length?ms/totS>=.5:m.length>0}}).filter(r=>r.ok&&r.s>0).sort((a,b)=>b.s-a.s);
+ if(!R.length)return[];return R.filter(r=>r.s>=R[0].s*.6).slice(0,2)}
+$('#fIA').onsubmit=e=>{e.preventDefault();const q=e.target.q.value,c=$('#chat'),add=(cl,t,s)=>{const d=document.createElement('div');d.className='m '+cl;d.textContent=t;if(s){const m=document.createElement('small');m.textContent='Fuente: '+s;d.append(m)}c.append(d);c.scrollTop=c.scrollHeight};
+ add('u',q);const r=buscar(q);r.length?add('a',r.map(x=>x.c).join('\n\n'),[...new Set(r.map(x=>x.f))].join(', ')):add('a','No encuentro esa información en la documentación incorporada. Carga el documento correspondiente en la pestaña Manuales e inténtalo de nuevo.');e.target.reset()};
+
+$('#exp').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(db)],{type:'application/json'}));a.download='electrosafe-datos.json';a.click()};
+$('#imp').onchange=async e=>{try{db=Object.assign(db,JSON.parse(await leer(e.target.files[0],'t')));save();render()}catch(x){alert('El archivo no es válido.')}};
+addEventListener('hashchange',verHV);verHV();render();
+</script>
+</body>
+</html>
